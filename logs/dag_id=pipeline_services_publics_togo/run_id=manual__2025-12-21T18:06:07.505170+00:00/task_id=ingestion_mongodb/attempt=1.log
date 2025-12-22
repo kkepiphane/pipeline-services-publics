@@ -1,0 +1,113 @@
+[2025-12-21T18:06:14.589+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-21T18:06:07.505170+00:00 [queued]>
+[2025-12-21T18:06:14.597+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-21T18:06:07.505170+00:00 [queued]>
+[2025-12-21T18:06:14.598+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-21T18:06:14.612+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): ingestion_mongodb> on 2025-12-21 18:06:07.505170+00:00
+[2025-12-21T18:06:14.620+0000] {standard_task_runner.py:60} INFO - Started process 222 to run task
+[2025-12-21T18:06:14.624+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'ingestion_mongodb', 'manual__2025-12-21T18:06:07.505170+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmp4yldneju']
+[2025-12-21T18:06:14.627+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask ingestion_mongodb
+[2025-12-21T18:06:14.702+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-21T18:06:07.505170+00:00 [running]> on host eb697cfec325
+[2025-12-21T18:06:14.881+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='ingestion_mongodb' AIRFLOW_CTX_EXECUTION_DATE='2025-12-21T18:06:07.505170+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-21T18:06:07.505170+00:00'
+[2025-12-21T18:06:14.882+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-21T18:06:14.885+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    /opt/spark/bin/spark-submit       --master spark://spark-master:7077       --packages org.mongodb.spark:mongo-spark-connector_2.12:10.5.0       --executor-memory 2G       --driver-memory 1G       /opt/***/spark_jobs/ingestion.py\n    ']
+[2025-12-21T18:06:14.899+0000] {subprocess.py:86} INFO - Output:
+[2025-12-21T18:06:17.868+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-12-21T18:06:17.951+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2025-12-21T18:06:17.951+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2025-12-21T18:06:17.957+0000] {subprocess.py:93} INFO - org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+[2025-12-21T18:06:17.959+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-f40873a5-d691-4170-9d7f-120f3a1dd775;1.0
+[2025-12-21T18:06:17.959+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-12-21T18:06:19.853+0000] {subprocess.py:93} INFO - 	found org.mongodb.spark#mongo-spark-connector_2.12;10.5.0 in central
+[2025-12-21T18:06:22.109+0000] {subprocess.py:93} INFO - 	found org.mongodb#mongodb-driver-sync;5.1.4 in central
+[2025-12-21T18:06:22.110+0000] {subprocess.py:93} INFO - 	[5.1.4] org.mongodb#mongodb-driver-sync;[5.1.1,5.1.99)
+[2025-12-21T18:06:22.773+0000] {subprocess.py:93} INFO - 	found org.mongodb#bson;5.1.4 in central
+[2025-12-21T18:06:26.058+0000] {subprocess.py:93} INFO - 	found org.mongodb#mongodb-driver-core;5.1.4 in central
+[2025-12-21T18:06:26.370+0000] {subprocess.py:93} INFO - 	found org.mongodb#bson-record-codec;5.1.4 in central
+[2025-12-21T18:06:26.813+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.jar ...
+[2025-12-21T18:06:27.402+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/5.1.4/mongodb-driver-sync-5.1.4.jar ...
+[2025-12-21T18:06:27.885+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/mongodb/bson/5.1.4/bson-5.1.4.jar ...
+[2025-12-21T18:06:28.186+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.mongodb#bson;5.1.4!bson.jar (447ms)
+[2025-12-21T18:06:28.349+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/5.1.4/mongodb-driver-core-5.1.4.jar ...
+[2025-12-21T18:06:28.971+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/mongodb/bson-record-codec/5.1.4/bson-record-codec-5.1.4.jar ...
+[2025-12-21T18:06:29.103+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.mongodb#bson-record-codec;5.1.4!bson-record-codec.jar (246ms)
+[2025-12-21T18:06:29.106+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 8460ms :: artifacts dl 2687ms
+[2025-12-21T18:06:29.106+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2025-12-21T18:06:29.107+0000] {subprocess.py:93} INFO - 	org.mongodb#bson;5.1.4 from central in [default]
+[2025-12-21T18:06:29.107+0000] {subprocess.py:93} INFO - 	org.mongodb#bson-record-codec;5.1.4 from central in [default]
+[2025-12-21T18:06:29.112+0000] {subprocess.py:93} INFO - 	org.mongodb#mongodb-driver-core;5.1.4 from central in [default]
+[2025-12-21T18:06:29.112+0000] {subprocess.py:93} INFO - 	org.mongodb#mongodb-driver-sync;5.1.4 from central in [default]
+[2025-12-21T18:06:29.113+0000] {subprocess.py:93} INFO - 	org.mongodb.spark#mongo-spark-connector_2.12;10.5.0 from central in [default]
+[2025-12-21T18:06:29.113+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-21T18:06:29.115+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-12-21T18:06:29.116+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-12-21T18:06:29.116+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-21T18:06:29.119+0000] {subprocess.py:93} INFO - 	|      default     |   5   |   5   |   5   |   0   ||   5   |   2   |
+[2025-12-21T18:06:29.119+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-21T18:06:29.123+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.123+0000] {subprocess.py:93} INFO - :: problems summary ::
+[2025-12-21T18:06:29.124+0000] {subprocess.py:93} INFO - :::: WARNINGS
+[2025-12-21T18:06:29.124+0000] {subprocess.py:93} INFO - 		[FAILED     ] org.mongodb.spark#mongo-spark-connector_2.12;10.5.0!mongo-spark-connector_2.12.jar: Downloaded file size (0) doesn't match expected Content Length (206146) for https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.jar. Please retry. (831ms)
+[2025-12-21T18:06:29.128+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.128+0000] {subprocess.py:93} INFO - 		[FAILED     ] org.mongodb.spark#mongo-spark-connector_2.12;10.5.0!mongo-spark-connector_2.12.jar: Downloaded file size (0) doesn't match expected Content Length (206146) for https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.jar. Please retry. (831ms)
+[2025-12-21T18:06:29.131+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.134+0000] {subprocess.py:93} INFO - 	==== central: tried
+[2025-12-21T18:06:29.134+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.135+0000] {subprocess.py:93} INFO - 	  https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.jar
+[2025-12-21T18:06:29.137+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.137+0000] {subprocess.py:93} INFO - 		[FAILED     ] org.mongodb#mongodb-driver-sync;5.1.4!mongodb-driver-sync.jar: Downloaded file size (0) doesn't match expected Content Length (153556) for https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/5.1.4/mongodb-driver-sync-5.1.4.jar. Please retry. (466ms)
+[2025-12-21T18:06:29.138+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.138+0000] {subprocess.py:93} INFO - 		[FAILED     ] org.mongodb#mongodb-driver-sync;5.1.4!mongodb-driver-sync.jar: Downloaded file size (0) doesn't match expected Content Length (153556) for https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/5.1.4/mongodb-driver-sync-5.1.4.jar. Please retry. (466ms)
+[2025-12-21T18:06:29.139+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.139+0000] {subprocess.py:93} INFO - 	==== central: tried
+[2025-12-21T18:06:29.140+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.140+0000] {subprocess.py:93} INFO - 	  https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/5.1.4/mongodb-driver-sync-5.1.4.jar
+[2025-12-21T18:06:29.141+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.141+0000] {subprocess.py:93} INFO - 		[FAILED     ] org.mongodb#mongodb-driver-core;5.1.4!mongodb-driver-core.jar: Downloaded file size (0) doesn't match expected Content Length (1706141) for https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/5.1.4/mongodb-driver-core-5.1.4.jar. Please retry. (662ms)
+[2025-12-21T18:06:29.141+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.142+0000] {subprocess.py:93} INFO - 		[FAILED     ] org.mongodb#mongodb-driver-core;5.1.4!mongodb-driver-core.jar: Downloaded file size (0) doesn't match expected Content Length (1706141) for https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/5.1.4/mongodb-driver-core-5.1.4.jar. Please retry. (662ms)
+[2025-12-21T18:06:29.142+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.142+0000] {subprocess.py:93} INFO - 	==== central: tried
+[2025-12-21T18:06:29.146+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.147+0000] {subprocess.py:93} INFO - 	  https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/5.1.4/mongodb-driver-core-5.1.4.jar
+[2025-12-21T18:06:29.147+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.148+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-12-21T18:06:29.148+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.150+0000] {subprocess.py:93} INFO - 		::              FAILED DOWNLOADS            ::
+[2025-12-21T18:06:29.150+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.151+0000] {subprocess.py:93} INFO - 		:: ^ see resolution messages for details  ^ ::
+[2025-12-21T18:06:29.151+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.151+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-12-21T18:06:29.152+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.152+0000] {subprocess.py:93} INFO - 		:: org.mongodb.spark#mongo-spark-connector_2.12;10.5.0!mongo-spark-connector_2.12.jar
+[2025-12-21T18:06:29.153+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.153+0000] {subprocess.py:93} INFO - 		:: org.mongodb#mongodb-driver-sync;5.1.4!mongodb-driver-sync.jar
+[2025-12-21T18:06:29.154+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.154+0000] {subprocess.py:93} INFO - 		:: org.mongodb#mongodb-driver-core;5.1.4!mongodb-driver-core.jar
+[2025-12-21T18:06:29.155+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.155+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-12-21T18:06:29.157+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.157+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.158+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:29.158+0000] {subprocess.py:93} INFO - :: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS
+[2025-12-21T18:06:29.159+0000] {subprocess.py:93} INFO - Exception in thread "main" java.lang.RuntimeException: [download failed: org.mongodb.spark#mongo-spark-connector_2.12;10.5.0!mongo-spark-connector_2.12.jar, download failed: org.mongodb#mongodb-driver-sync;5.1.4!mongodb-driver-sync.jar, download failed: org.mongodb#mongodb-driver-core;5.1.4!mongodb-driver-core.jar]
+[2025-12-21T18:06:29.159+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmitUtils$.resolveMavenCoordinates(SparkSubmit.scala:1608)
+[2025-12-21T18:06:29.159+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:185)
+[2025-12-21T18:06:29.162+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:334)
+[2025-12-21T18:06:29.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:964)
+[2025-12-21T18:06:29.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:194)
+[2025-12-21T18:06:29.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:217)
+[2025-12-21T18:06:29.164+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:91)
+[2025-12-21T18:06:29.164+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1120)
+[2025-12-21T18:06:29.164+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1129)
+[2025-12-21T18:06:29.167+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2025-12-21T18:06:29.216+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-21T18:06:29.267+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-21T18:06:29.273+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_services_publics_togo, task_id=ingestion_mongodb, execution_date=20251221T180607, start_date=20251221T180614, end_date=20251221T180629
+[2025-12-21T18:06:29.298+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 8 for task ingestion_mongodb (Bash command failed. The command returned a non-zero exit code 1.; 222)
+[2025-12-21T18:06:29.333+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-21T18:06:29.380+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

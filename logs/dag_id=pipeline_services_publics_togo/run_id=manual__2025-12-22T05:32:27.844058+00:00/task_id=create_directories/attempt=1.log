@@ -1,0 +1,17 @@
+[2025-12-22T05:32:33.488+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.create_directories manual__2025-12-22T05:32:27.844058+00:00 [queued]>
+[2025-12-22T05:32:33.496+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.create_directories manual__2025-12-22T05:32:27.844058+00:00 [queued]>
+[2025-12-22T05:32:33.497+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-22T05:32:33.509+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): create_directories> on 2025-12-22 05:32:27.844058+00:00
+[2025-12-22T05:32:33.514+0000] {standard_task_runner.py:60} INFO - Started process 182 to run task
+[2025-12-22T05:32:33.518+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'create_directories', 'manual__2025-12-22T05:32:27.844058+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpzcpph4eu']
+[2025-12-22T05:32:33.521+0000] {standard_task_runner.py:88} INFO - Job 30: Subtask create_directories
+[2025-12-22T05:32:33.599+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.create_directories manual__2025-12-22T05:32:27.844058+00:00 [running]> on host 8760ad6ea1f0
+[2025-12-22T05:32:33.921+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='create_directories' AIRFLOW_CTX_EXECUTION_DATE='2025-12-22T05:32:27.844058+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-22T05:32:27.844058+00:00'
+[2025-12-22T05:32:33.923+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-22T05:32:33.924+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    mkdir -p /opt/data/raw/demandes\n    echo "✓ Dossiers créés"\n    ']
+[2025-12-22T05:32:33.940+0000] {subprocess.py:86} INFO - Output:
+[2025-12-22T05:32:33.950+0000] {subprocess.py:93} INFO - ✓ Dossiers créés
+[2025-12-22T05:32:33.951+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-22T05:32:34.011+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=pipeline_services_publics_togo, task_id=create_directories, execution_date=20251222T053227, start_date=20251222T053233, end_date=20251222T053234
+[2025-12-22T05:32:34.058+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-22T05:32:34.151+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

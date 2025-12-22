@@ -1,0 +1,40 @@
+[2025-12-22T05:11:50.376+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo manual__2025-12-22T05:11:49.438380+00:00 [queued]>
+[2025-12-22T05:11:50.415+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo manual__2025-12-22T05:11:49.438380+00:00 [queued]>
+[2025-12-22T05:11:50.415+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-22T05:11:50.462+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): load_data_to_mongo> on 2025-12-22 05:11:49.438380+00:00
+[2025-12-22T05:11:50.478+0000] {standard_task_runner.py:60} INFO - Started process 186 to run task
+[2025-12-22T05:11:50.486+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'load_data_to_mongo', 'manual__2025-12-22T05:11:49.438380+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmp_dfq8vex']
+[2025-12-22T05:11:50.508+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask load_data_to_mongo
+[2025-12-22T05:11:50.609+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.load_data_to_mongo manual__2025-12-22T05:11:49.438380+00:00 [running]> on host 8760ad6ea1f0
+[2025-12-22T05:11:50.760+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='load_data_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-22T05:11:49.438380+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-22T05:11:49.438380+00:00'
+[2025-12-22T05:11:50.761+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-22T05:11:50.771+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    python /opt/***/scripts/load_data_to_mongo.py     /opt/***/data/demandes_services_publics_togo.json\n    ']
+[2025-12-22T05:11:50.806+0000] {subprocess.py:86} INFO - Output:
+[2025-12-22T05:11:51.245+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-12-22T05:11:51.246+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/load_data_to_mongo.py", line 45, in load_data_to_mongodb
+[2025-12-22T05:11:51.246+0000] {subprocess.py:93} INFO -     with open(json_file_path, "r", encoding="utf-8") as f:
+[2025-12-22T05:11:51.246+0000] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: '/opt/***/data/demandes_services_publics_togo.json'
+[2025-12-22T05:11:51.246+0000] {subprocess.py:93} INFO - 
+[2025-12-22T05:11:51.246+0000] {subprocess.py:93} INFO - Fichier source: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-22T05:11:51.247+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-22T05:11:51.247+0000] {subprocess.py:93} INFO - CHARGEMENT DES DONNÉES DANS MONGODB
+[2025-12-22T05:11:51.247+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-22T05:11:51.247+0000] {subprocess.py:93} INFO - 
+[2025-12-22T05:11:51.247+0000] {subprocess.py:93} INFO - [1/3] Connexion à MongoDB...
+[2025-12-22T05:11:51.247+0000] {subprocess.py:93} INFO - ✓ Connexion établie
+[2025-12-22T05:11:51.247+0000] {subprocess.py:93} INFO - 
+[2025-12-22T05:11:51.247+0000] {subprocess.py:93} INFO - [2/3] Lecture du fichier: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-22T05:11:51.247+0000] {subprocess.py:93} INFO - 
+[2025-12-22T05:11:51.248+0000] {subprocess.py:93} INFO - ❌ ERREUR: [Errno 2] No such file or directory: '/opt/***/data/demandes_services_publics_togo.json'
+[2025-12-22T05:11:51.834+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-22T05:11:51.890+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-22T05:11:51.904+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_services_publics_togo, task_id=load_data_to_mongo, execution_date=20251222T051149, start_date=20251222T051150, end_date=20251222T051151
+[2025-12-22T05:11:51.961+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 2 for task load_data_to_mongo (Bash command failed. The command returned a non-zero exit code 1.; 186)
+[2025-12-22T05:11:52.006+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-22T05:11:52.043+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

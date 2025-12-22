@@ -1,0 +1,175 @@
+[2025-12-21T14:09:28.640+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T14:09:28.655+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T14:09:28.656+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-21T14:09:28.674+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): load_data_to_mongo> on 2025-12-20 02:00:00+00:00
+[2025-12-21T14:09:28.680+0000] {standard_task_runner.py:60} INFO - Started process 171 to run task
+[2025-12-21T14:09:28.688+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'load_data_to_mongo', 'scheduled__2025-12-20T02:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpsgne_pua']
+[2025-12-21T14:09:28.691+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask load_data_to_mongo
+[2025-12-21T14:09:28.770+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [running]> on host a1c2defb4657
+[2025-12-21T14:09:28.957+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='load_data_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-20T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-20T02:00:00+00:00'
+[2025-12-21T14:09:28.958+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-21T14:09:28.958+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    python /opt/***/scripts/load_data_to_mongo.py     /opt/***/data/demandes_services_publics_togo.json\n    ']
+[2025-12-21T14:09:28.969+0000] {subprocess.py:86} INFO - Output:
+[2025-12-21T14:09:29.684+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:09:29.684+0000] {subprocess.py:93} INFO - Fichier source: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T14:09:29.684+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T14:09:29.684+0000] {subprocess.py:93} INFO - CHARGEMENT DES DONNÉES DANS MONGODB
+[2025-12-21T14:09:29.684+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T14:09:29.684+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO - [1/3] Connexion à MongoDB...
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO - ✓ Connexion établie
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO - [2/3] Lecture du fichier: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO - ✓ 10000 documents lus
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO - [3/3] Upsert des documents dans MongoDB...
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO - ✓ Chargement terminé
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO -   - Insertés   : 1068
+[2025-12-21T14:09:29.685+0000] {subprocess.py:93} INFO -   - Modifiés   : 38
+[2025-12-21T14:09:29.686+0000] {subprocess.py:93} INFO -   - Matchés    : 1744
+[2025-12-21T14:09:29.686+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:09:29.686+0000] {subprocess.py:93} INFO - ✓ Total documents en base: 2717
+[2025-12-21T14:09:30.022+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-21T14:09:30.126+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=pipeline_services_publics_togo, task_id=load_data_to_mongo, execution_date=20251220T020000, start_date=20251221T140928, end_date=20251221T140930
+[2025-12-21T14:09:30.162+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-21T14:09:30.215+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-21T14:58:16.207+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T14:58:16.217+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T14:58:16.217+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-21T14:58:16.233+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): load_data_to_mongo> on 2025-12-20 02:00:00+00:00
+[2025-12-21T14:58:16.238+0000] {standard_task_runner.py:60} INFO - Started process 172 to run task
+[2025-12-21T14:58:16.241+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'load_data_to_mongo', 'scheduled__2025-12-20T02:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpt4_9602z']
+[2025-12-21T14:58:16.244+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask load_data_to_mongo
+[2025-12-21T14:58:16.312+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [running]> on host 13b6637ef0d9
+[2025-12-21T14:58:16.598+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='load_data_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-20T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-20T02:00:00+00:00'
+[2025-12-21T14:58:16.601+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-21T14:58:16.602+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    python /opt/***/scripts/load_data_to_mongo.py     /opt/***/data/demandes_services_publics_togo.json\n    ']
+[2025-12-21T14:58:16.630+0000] {subprocess.py:86} INFO - Output:
+[2025-12-21T14:58:17.470+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:58:17.471+0000] {subprocess.py:93} INFO - Fichier source: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T14:58:17.471+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T14:58:17.471+0000] {subprocess.py:93} INFO - CHARGEMENT DES DONNÉES DANS MONGODB
+[2025-12-21T14:58:17.471+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T14:58:17.471+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:58:17.471+0000] {subprocess.py:93} INFO - [1/3] Connexion à MongoDB...
+[2025-12-21T14:58:17.471+0000] {subprocess.py:93} INFO - ✓ Connexion établie
+[2025-12-21T14:58:17.472+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:58:17.472+0000] {subprocess.py:93} INFO - [2/3] Lecture du fichier: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T14:58:17.472+0000] {subprocess.py:93} INFO - ✓ 10000 documents lus
+[2025-12-21T14:58:17.472+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:58:17.472+0000] {subprocess.py:93} INFO - [3/3] Upsert des documents dans MongoDB...
+[2025-12-21T14:58:17.472+0000] {subprocess.py:93} INFO - ✓ Chargement terminé
+[2025-12-21T14:58:17.472+0000] {subprocess.py:93} INFO -   - Insertés   : 2587
+[2025-12-21T14:58:17.472+0000] {subprocess.py:93} INFO -   - Modifiés   : 87
+[2025-12-21T14:58:17.472+0000] {subprocess.py:93} INFO -   - Matchés    : 225
+[2025-12-21T14:58:17.473+0000] {subprocess.py:93} INFO - 
+[2025-12-21T14:58:17.473+0000] {subprocess.py:93} INFO - ✓ Total documents en base: 2717
+[2025-12-21T14:58:17.769+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-21T14:58:17.878+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=pipeline_services_publics_togo, task_id=load_data_to_mongo, execution_date=20251220T020000, start_date=20251221T145816, end_date=20251221T145817
+[2025-12-21T14:58:17.945+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-21T14:58:18.071+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-21T15:07:29.017+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T15:07:29.031+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T15:07:29.031+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-21T15:07:29.049+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): load_data_to_mongo> on 2025-12-20 02:00:00+00:00
+[2025-12-21T15:07:29.061+0000] {standard_task_runner.py:60} INFO - Started process 171 to run task
+[2025-12-21T15:07:29.064+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'load_data_to_mongo', 'scheduled__2025-12-20T02:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmp6tjpjxjd']
+[2025-12-21T15:07:29.069+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask load_data_to_mongo
+[2025-12-21T15:07:29.181+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [running]> on host 30a6224e97bc
+[2025-12-21T15:07:29.299+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='load_data_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-20T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-20T02:00:00+00:00'
+[2025-12-21T15:07:29.300+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-21T15:07:29.300+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    python /opt/***/scripts/load_data_to_mongo.py     /opt/***/data/demandes_services_publics_togo.json\n    ']
+[2025-12-21T15:07:29.314+0000] {subprocess.py:86} INFO - Output:
+[2025-12-21T15:07:30.060+0000] {subprocess.py:93} INFO - 
+[2025-12-21T15:07:30.060+0000] {subprocess.py:93} INFO - Fichier source: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T15:07:30.060+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T15:07:30.060+0000] {subprocess.py:93} INFO - CHARGEMENT DES DONNÉES DANS MONGODB
+[2025-12-21T15:07:30.060+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T15:07:30.061+0000] {subprocess.py:93} INFO - 
+[2025-12-21T15:07:30.061+0000] {subprocess.py:93} INFO - [1/3] Connexion à MongoDB...
+[2025-12-21T15:07:30.061+0000] {subprocess.py:93} INFO - ✓ Connexion établie
+[2025-12-21T15:07:30.061+0000] {subprocess.py:93} INFO - 
+[2025-12-21T15:07:30.061+0000] {subprocess.py:93} INFO - [2/3] Lecture du fichier: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T15:07:30.061+0000] {subprocess.py:93} INFO - ✓ 10000 documents lus
+[2025-12-21T15:07:30.061+0000] {subprocess.py:93} INFO - 
+[2025-12-21T15:07:30.061+0000] {subprocess.py:93} INFO - [3/3] Upsert des documents dans MongoDB...
+[2025-12-21T15:07:30.061+0000] {subprocess.py:93} INFO - ✓ Chargement terminé
+[2025-12-21T15:07:30.062+0000] {subprocess.py:93} INFO -   - Insertés   : 1641
+[2025-12-21T15:07:30.062+0000] {subprocess.py:93} INFO -   - Modifiés   : 70
+[2025-12-21T15:07:30.062+0000] {subprocess.py:93} INFO -   - Matchés    : 1171
+[2025-12-21T15:07:30.062+0000] {subprocess.py:93} INFO - 
+[2025-12-21T15:07:30.062+0000] {subprocess.py:93} INFO - ✓ Total documents en base: 2717
+[2025-12-21T15:07:30.360+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-21T15:07:30.474+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=pipeline_services_publics_togo, task_id=load_data_to_mongo, execution_date=20251220T020000, start_date=20251221T150729, end_date=20251221T150730
+[2025-12-21T15:07:30.595+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-21T15:07:30.660+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-21T18:06:09.012+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T18:06:09.021+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T18:06:09.022+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-21T18:06:09.040+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): load_data_to_mongo> on 2025-12-20 02:00:00+00:00
+[2025-12-21T18:06:09.044+0000] {standard_task_runner.py:60} INFO - Started process 190 to run task
+[2025-12-21T18:06:09.052+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'load_data_to_mongo', 'scheduled__2025-12-20T02:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpktxcqh2z']
+[2025-12-21T18:06:09.059+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask load_data_to_mongo
+[2025-12-21T18:06:09.139+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [running]> on host eb697cfec325
+[2025-12-21T18:06:09.254+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='load_data_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-20T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-20T02:00:00+00:00'
+[2025-12-21T18:06:09.255+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-21T18:06:09.256+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    python /opt/***/scripts/load_data_to_mongo.py     /opt/***/data/demandes_services_publics_togo.json\n    ']
+[2025-12-21T18:06:09.266+0000] {subprocess.py:86} INFO - Output:
+[2025-12-21T18:06:10.736+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:10.737+0000] {subprocess.py:93} INFO - Fichier source: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T18:06:10.737+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T18:06:10.737+0000] {subprocess.py:93} INFO - CHARGEMENT DES DONNÉES DANS MONGODB
+[2025-12-21T18:06:10.737+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T18:06:10.737+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:10.737+0000] {subprocess.py:93} INFO - [1/3] Connexion à MongoDB...
+[2025-12-21T18:06:10.737+0000] {subprocess.py:93} INFO - ✓ Connexion établie
+[2025-12-21T18:06:10.738+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:10.738+0000] {subprocess.py:93} INFO - [2/3] Lecture du fichier: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T18:06:10.738+0000] {subprocess.py:93} INFO - ✓ 10000 documents lus
+[2025-12-21T18:06:10.738+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:10.738+0000] {subprocess.py:93} INFO - [3/3] Upsert des documents dans MongoDB...
+[2025-12-21T18:06:10.738+0000] {subprocess.py:93} INFO - ✓ Chargement terminé
+[2025-12-21T18:06:10.738+0000] {subprocess.py:93} INFO -   - Insertés   : 1137
+[2025-12-21T18:06:10.738+0000] {subprocess.py:93} INFO -   - Modifiés   : 16
+[2025-12-21T18:06:10.738+0000] {subprocess.py:93} INFO -   - Matchés    : 8863
+[2025-12-21T18:06:10.739+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:06:10.739+0000] {subprocess.py:93} INFO - ✓ Total documents en base: 8829
+[2025-12-21T18:06:11.021+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-21T18:06:11.140+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=pipeline_services_publics_togo, task_id=load_data_to_mongo, execution_date=20251220T020000, start_date=20251221T180609, end_date=20251221T180611
+[2025-12-21T18:06:11.201+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-21T18:06:11.369+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-21T19:14:42.962+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T19:14:42.986+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [queued]>
+[2025-12-21T19:14:42.987+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-21T19:14:43.013+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): load_data_to_mongo> on 2025-12-20 02:00:00+00:00
+[2025-12-21T19:14:43.020+0000] {standard_task_runner.py:60} INFO - Started process 182 to run task
+[2025-12-21T19:14:43.026+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'load_data_to_mongo', 'scheduled__2025-12-20T02:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmp2a6p0e9z']
+[2025-12-21T19:14:43.028+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask load_data_to_mongo
+[2025-12-21T19:14:43.118+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.load_data_to_mongo scheduled__2025-12-20T02:00:00+00:00 [running]> on host 8a1c1bf9c649
+[2025-12-21T19:14:43.366+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='load_data_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-20T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-20T02:00:00+00:00'
+[2025-12-21T19:14:43.368+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-21T19:14:43.369+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    python /opt/***/scripts/load_data_to_mongo.py     /opt/data/demandes_services_publics_togo.json\n    ']
+[2025-12-21T19:14:43.403+0000] {subprocess.py:86} INFO - Output:
+[2025-12-21T19:14:44.865+0000] {subprocess.py:93} INFO - 
+[2025-12-21T19:14:44.865+0000] {subprocess.py:93} INFO - Fichier source: /opt/data/demandes_services_publics_togo.json
+[2025-12-21T19:14:44.865+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T19:14:44.865+0000] {subprocess.py:93} INFO - CHARGEMENT DES DONNÉES DANS MONGODB
+[2025-12-21T19:14:44.865+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T19:14:44.865+0000] {subprocess.py:93} INFO - 
+[2025-12-21T19:14:44.866+0000] {subprocess.py:93} INFO - [1/3] Connexion à MongoDB...
+[2025-12-21T19:14:44.866+0000] {subprocess.py:93} INFO - ✓ Connexion établie
+[2025-12-21T19:14:44.866+0000] {subprocess.py:93} INFO - 
+[2025-12-21T19:14:44.866+0000] {subprocess.py:93} INFO - [2/3] Lecture du fichier: /opt/data/demandes_services_publics_togo.json
+[2025-12-21T19:14:44.866+0000] {subprocess.py:93} INFO - ✓ 10000 documents lus
+[2025-12-21T19:14:44.866+0000] {subprocess.py:93} INFO - 
+[2025-12-21T19:14:44.866+0000] {subprocess.py:93} INFO - [3/3] Upsert des documents dans MongoDB...
+[2025-12-21T19:14:44.866+0000] {subprocess.py:93} INFO - ✓ Chargement terminé
+[2025-12-21T19:14:44.867+0000] {subprocess.py:93} INFO -   - Insertés   : 4177
+[2025-12-21T19:14:44.867+0000] {subprocess.py:93} INFO -   - Modifiés   : 49
+[2025-12-21T19:14:44.867+0000] {subprocess.py:93} INFO -   - Matchés    : 5823
+[2025-12-21T19:14:44.867+0000] {subprocess.py:93} INFO - 
+[2025-12-21T19:14:44.867+0000] {subprocess.py:93} INFO - ✓ Total documents en base: 8829
+[2025-12-21T19:14:44.995+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-21T19:14:45.047+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=pipeline_services_publics_togo, task_id=load_data_to_mongo, execution_date=20251220T020000, start_date=20251221T191442, end_date=20251221T191445
+[2025-12-21T19:14:45.108+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-21T19:14:45.146+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

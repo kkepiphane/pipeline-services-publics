@@ -1,0 +1,58 @@
+[2025-12-21T07:25:55.293+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo manual__2025-12-21T07:20:51.700134+00:00 [queued]>
+[2025-12-21T07:25:55.328+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo manual__2025-12-21T07:20:51.700134+00:00 [queued]>
+[2025-12-21T07:25:55.328+0000] {taskinstance.py:2171} INFO - Starting attempt 2 of 3
+[2025-12-21T07:25:55.383+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): load_data_to_mongo> on 2025-12-21 07:20:51.700134+00:00
+[2025-12-21T07:25:55.397+0000] {standard_task_runner.py:60} INFO - Started process 322 to run task
+[2025-12-21T07:25:55.417+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'load_data_to_mongo', 'manual__2025-12-21T07:20:51.700134+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpaqbfsrnb']
+[2025-12-21T07:25:55.425+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask load_data_to_mongo
+[2025-12-21T07:25:55.525+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.load_data_to_mongo manual__2025-12-21T07:20:51.700134+00:00 [running]> on host 6e4688459239
+[2025-12-21T07:25:55.619+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='load_data_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-21T07:20:51.700134+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-21T07:20:51.700134+00:00'
+[2025-12-21T07:25:55.620+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-21T07:25:55.620+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    python /opt/***/scripts/load_data_to_mongo.py     /opt/***/data/demandes_services_publics_togo.json\n    ']
+[2025-12-21T07:25:55.631+0000] {subprocess.py:86} INFO - Output:
+[2025-12-21T07:25:56.012+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-12-21T07:25:56.012+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/load_data_to_mongo.py", line 49, in load_data_to_mongodb
+[2025-12-21T07:25:56.012+0000] {subprocess.py:93} INFO -     result = collection.insert_many(data)
+[2025-12-21T07:25:56.013+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/_csot.py", line 107, in csot_wrapper
+[2025-12-21T07:25:56.013+0000] {subprocess.py:93} INFO -     return func(self, *args, **kwargs)
+[2025-12-21T07:25:56.013+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/collection.py", line 755, in insert_many
+[2025-12-21T07:25:56.013+0000] {subprocess.py:93} INFO -     blk.execute(write_concern, session=session)
+[2025-12-21T07:25:56.013+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/bulk.py", line 576, in execute
+[2025-12-21T07:25:56.013+0000] {subprocess.py:93} INFO -     return self.execute_command(generator, write_concern, session)
+[2025-12-21T07:25:56.013+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/bulk.py", line 446, in execute_command
+[2025-12-21T07:25:56.014+0000] {subprocess.py:93} INFO -     _raise_bulk_write_error(full_result)
+[2025-12-21T07:25:56.014+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/bulk.py", line 157, in _raise_bulk_write_error
+[2025-12-21T07:25:56.014+0000] {subprocess.py:93} INFO -     raise BulkWriteError(full_result)
+[2025-12-21T07:25:56.014+0000] {subprocess.py:93} INFO - pymongo.errors.BulkWriteError: batch op errors occurred, full error: {'writeErrors': [{'index': 668, 'code': 11000, 'errmsg': 'E11000 duplicate key error collection: services_publics.demandes index: _id_ dup key: { _id: "REQ-3491" }', 'keyPattern': {'_id': 1}, 'keyValue': {'_id': 'REQ-3491'}, 'op': {'_id': 'REQ-3491', 'event_date': '2025/10/26', 'service': 'dechets', 'location': {'commune': 'Lomé'}, 'comment': None}}], 'writeConcernErrors': [], 'nInserted': 668, 'nUpserted': 0, 'nMatched': 0, 'nModified': 0, 'nRemoved': 0, 'upserted': []}
+[2025-12-21T07:25:56.015+0000] {subprocess.py:93} INFO - 
+[2025-12-21T07:25:56.016+0000] {subprocess.py:93} INFO - Fichier source: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T07:25:56.016+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T07:25:56.016+0000] {subprocess.py:93} INFO - CHARGEMENT DES DONNÉES DANS MONGODB
+[2025-12-21T07:25:56.016+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-21T07:25:56.016+0000] {subprocess.py:93} INFO - 
+[2025-12-21T07:25:56.016+0000] {subprocess.py:93} INFO - [1/3] Connexion à MongoDB...
+[2025-12-21T07:25:56.016+0000] {subprocess.py:93} INFO - ✓ Connexion établie
+[2025-12-21T07:25:56.016+0000] {subprocess.py:93} INFO - 
+[2025-12-21T07:25:56.016+0000] {subprocess.py:93} INFO - [2/3] Nettoyage de la collection existante...
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - ✓ Collection nettoyée
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - 
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - [3/3] Lecture du fichier: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - ✓ 10000 documents lus depuis le fichier
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - 
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - Insertion des documents dans MongoDB...
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - 
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - ❌ ERREUR: batch op errors occurred, full error: {'writeErrors': [{'index': 668, 'code': 11000, 'errmsg': 'E11000 duplicate key error collection: services_publics.demandes index: _id_ dup key: { _id: "REQ-3491" }', 'keyPattern': {'_id': 1}, 'keyValue': {'_id': 'REQ-3491'}, 'op': {'_id': 'REQ-3491', 'event_date': '2025/10/26', 'service': 'dechets', 'location': {'commune': 'Lomé'}, 'comment': None}}], 'writeConcernErrors': [], 'nInserted': 668, 'nUpserted': 0, 'nMatched': 0, 'nModified': 0, 'nRemoved': 0, 'upserted': []}
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - 
+[2025-12-21T07:25:56.017+0000] {subprocess.py:93} INFO - ❌ Le chargement a échoué
+[2025-12-21T07:25:56.466+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-21T07:25:56.514+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-21T07:25:56.525+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_services_publics_togo, task_id=load_data_to_mongo, execution_date=20251221T072051, start_date=20251221T072555, end_date=20251221T072556
+[2025-12-21T07:25:56.568+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 10 for task load_data_to_mongo (Bash command failed. The command returned a non-zero exit code 1.; 322)
+[2025-12-21T07:25:56.600+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-21T07:25:56.700+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

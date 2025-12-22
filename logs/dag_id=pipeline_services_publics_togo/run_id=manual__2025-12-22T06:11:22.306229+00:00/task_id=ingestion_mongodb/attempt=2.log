@@ -1,0 +1,400 @@
+[2025-12-22T06:17:50.651+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-22T06:11:22.306229+00:00 [queued]>
+[2025-12-22T06:17:50.664+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-22T06:11:22.306229+00:00 [queued]>
+[2025-12-22T06:17:50.665+0000] {taskinstance.py:2171} INFO - Starting attempt 2 of 3
+[2025-12-22T06:17:50.682+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): ingestion_mongodb> on 2025-12-22 06:11:22.306229+00:00
+[2025-12-22T06:17:50.690+0000] {standard_task_runner.py:60} INFO - Started process 665 to run task
+[2025-12-22T06:17:50.695+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'ingestion_mongodb', 'manual__2025-12-22T06:11:22.306229+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpgjyxo7bp']
+[2025-12-22T06:17:50.697+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask ingestion_mongodb
+[2025-12-22T06:17:50.757+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-22T06:11:22.306229+00:00 [running]> on host 8280e970b9f5
+[2025-12-22T06:17:50.842+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='ingestion_mongodb' AIRFLOW_CTX_EXECUTION_DATE='2025-12-22T06:11:22.306229+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-22T06:11:22.306229+00:00'
+[2025-12-22T06:17:50.843+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-22T06:17:50.843+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    /opt/spark/bin/spark-submit       --master spark://spark-master:7077       --packages org.mongodb.spark:mongo-spark-connector_2.12:10.5.0       --executor-memory 2G       --driver-memory 1G       /opt/***/spark_jobs/ingestion.py\n    ']
+[2025-12-22T06:17:50.853+0000] {subprocess.py:86} INFO - Output:
+[2025-12-22T06:17:52.295+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-12-22T06:17:52.359+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2025-12-22T06:17:52.360+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2025-12-22T06:17:52.364+0000] {subprocess.py:93} INFO - org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+[2025-12-22T06:17:52.365+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-685e3199-bd64-4626-ac8d-0a1036f9ced5;1.0
+[2025-12-22T06:17:52.366+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-12-22T06:17:52.461+0000] {subprocess.py:93} INFO - 	found org.mongodb.spark#mongo-spark-connector_2.12;10.5.0 in central
+[2025-12-22T06:17:55.731+0000] {subprocess.py:93} INFO - 	found org.mongodb#mongodb-driver-sync;5.1.4 in central
+[2025-12-22T06:17:55.731+0000] {subprocess.py:93} INFO - 	[5.1.4] org.mongodb#mongodb-driver-sync;[5.1.1,5.1.99)
+[2025-12-22T06:17:55.861+0000] {subprocess.py:93} INFO - 	found org.mongodb#bson;5.1.4 in central
+[2025-12-22T06:17:56.002+0000] {subprocess.py:93} INFO - 	found org.mongodb#mongodb-driver-core;5.1.4 in central
+[2025-12-22T06:17:56.075+0000] {subprocess.py:93} INFO - 	found org.mongodb#bson-record-codec;5.1.4 in central
+[2025-12-22T06:17:56.111+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 3725ms :: artifacts dl 20ms
+[2025-12-22T06:17:56.112+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2025-12-22T06:17:56.112+0000] {subprocess.py:93} INFO - 	org.mongodb#bson;5.1.4 from central in [default]
+[2025-12-22T06:17:56.114+0000] {subprocess.py:93} INFO - 	org.mongodb#bson-record-codec;5.1.4 from central in [default]
+[2025-12-22T06:17:56.115+0000] {subprocess.py:93} INFO - 	org.mongodb#mongodb-driver-core;5.1.4 from central in [default]
+[2025-12-22T06:17:56.115+0000] {subprocess.py:93} INFO - 	org.mongodb#mongodb-driver-sync;5.1.4 from central in [default]
+[2025-12-22T06:17:56.115+0000] {subprocess.py:93} INFO - 	org.mongodb.spark#mongo-spark-connector_2.12;10.5.0 from central in [default]
+[2025-12-22T06:17:56.115+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-22T06:17:56.115+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-12-22T06:17:56.119+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-12-22T06:17:56.119+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-22T06:17:56.119+0000] {subprocess.py:93} INFO - 	|      default     |   5   |   1   |   0   |   0   ||   5   |   0   |
+[2025-12-22T06:17:56.119+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-22T06:17:56.123+0000] {subprocess.py:93} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-685e3199-bd64-4626-ac8d-0a1036f9ced5
+[2025-12-22T06:17:56.124+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-12-22T06:17:56.133+0000] {subprocess.py:93} INFO - 	0 artifacts copied, 5 already retrieved (0kB/9ms)
+[2025-12-22T06:17:56.379+0000] {subprocess.py:93} INFO - 25/12/22 06:17:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-12-22T06:17:57.355+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SparkContext: Running Spark version 3.5.1
+[2025-12-22T06:17:57.357+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SparkContext: OS info Linux, 6.8.0-90-generic, amd64
+[2025-12-22T06:17:57.358+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SparkContext: Java version 17.0.17
+[2025-12-22T06:17:57.393+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO ResourceUtils: ==============================================================
+[2025-12-22T06:17:57.393+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-12-22T06:17:57.394+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO ResourceUtils: ==============================================================
+[2025-12-22T06:17:57.395+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SparkContext: Submitted application: Ingestion_MongoDB_Raw
+[2025-12-22T06:17:57.425+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 2048, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-12-22T06:17:57.433+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO ResourceProfile: Limiting resource is cpu
+[2025-12-22T06:17:57.434+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-12-22T06:17:57.501+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SecurityManager: Changing view acls to: ***
+[2025-12-22T06:17:57.502+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SecurityManager: Changing modify acls to: ***
+[2025-12-22T06:17:57.502+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SecurityManager: Changing view acls groups to:
+[2025-12-22T06:17:57.502+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SecurityManager: Changing modify acls groups to:
+[2025-12-22T06:17:57.502+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-12-22T06:17:57.692+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO Utils: Successfully started service 'sparkDriver' on port 42289.
+[2025-12-22T06:17:57.715+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SparkEnv: Registering MapOutputTracker
+[2025-12-22T06:17:57.743+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SparkEnv: Registering BlockManagerMaster
+[2025-12-22T06:17:57.759+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-12-22T06:17:57.760+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-12-22T06:17:57.763+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-12-22T06:17:57.780+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6c436ff8-0c99-4186-8a63-21e20da218b3
+[2025-12-22T06:17:57.791+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-12-22T06:17:57.806+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-12-22T06:17:57.922+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-12-22T06:17:57.987+0000] {subprocess.py:93} INFO - 25/12/22 06:17:57 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-12-22T06:17:58.028+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.mongodb.spark_mongo-spark-connector_2.12-10.5.0.jar at spark://8280e970b9f5:42289/jars/org.mongodb.spark_mongo-spark-connector_2.12-10.5.0.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.029+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.mongodb_mongodb-driver-sync-5.1.4.jar at spark://8280e970b9f5:42289/jars/org.mongodb_mongodb-driver-sync-5.1.4.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.030+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.mongodb_bson-5.1.4.jar at spark://8280e970b9f5:42289/jars/org.mongodb_bson-5.1.4.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.030+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.mongodb_mongodb-driver-core-5.1.4.jar at spark://8280e970b9f5:42289/jars/org.mongodb_mongodb-driver-core-5.1.4.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.031+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.mongodb_bson-record-codec-5.1.4.jar at spark://8280e970b9f5:42289/jars/org.mongodb_bson-record-codec-5.1.4.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.033+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.mongodb.spark_mongo-spark-connector_2.12-10.5.0.jar at spark://8280e970b9f5:42289/files/org.mongodb.spark_mongo-spark-connector_2.12-10.5.0.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.034+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO Utils: Copying /home/***/.ivy2/jars/org.mongodb.spark_mongo-spark-connector_2.12-10.5.0.jar to /tmp/spark-3e78c5e8-1194-423b-b40b-f786eb8400a2/userFiles-9517a259-5446-46ba-a8ac-372b7e7f1b2c/org.mongodb.spark_mongo-spark-connector_2.12-10.5.0.jar
+[2025-12-22T06:17:58.044+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.mongodb_mongodb-driver-sync-5.1.4.jar at spark://8280e970b9f5:42289/files/org.mongodb_mongodb-driver-sync-5.1.4.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.045+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO Utils: Copying /home/***/.ivy2/jars/org.mongodb_mongodb-driver-sync-5.1.4.jar to /tmp/spark-3e78c5e8-1194-423b-b40b-f786eb8400a2/userFiles-9517a259-5446-46ba-a8ac-372b7e7f1b2c/org.mongodb_mongodb-driver-sync-5.1.4.jar
+[2025-12-22T06:17:58.053+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.mongodb_bson-5.1.4.jar at spark://8280e970b9f5:42289/files/org.mongodb_bson-5.1.4.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.060+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO Utils: Copying /home/***/.ivy2/jars/org.mongodb_bson-5.1.4.jar to /tmp/spark-3e78c5e8-1194-423b-b40b-f786eb8400a2/userFiles-9517a259-5446-46ba-a8ac-372b7e7f1b2c/org.mongodb_bson-5.1.4.jar
+[2025-12-22T06:17:58.067+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.mongodb_mongodb-driver-core-5.1.4.jar at spark://8280e970b9f5:42289/files/org.mongodb_mongodb-driver-core-5.1.4.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.068+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO Utils: Copying /home/***/.ivy2/jars/org.mongodb_mongodb-driver-core-5.1.4.jar to /tmp/spark-3e78c5e8-1194-423b-b40b-f786eb8400a2/userFiles-9517a259-5446-46ba-a8ac-372b7e7f1b2c/org.mongodb_mongodb-driver-core-5.1.4.jar
+[2025-12-22T06:17:58.077+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.mongodb_bson-record-codec-5.1.4.jar at spark://8280e970b9f5:42289/files/org.mongodb_bson-record-codec-5.1.4.jar with timestamp 1766384277348
+[2025-12-22T06:17:58.077+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO Utils: Copying /home/***/.ivy2/jars/org.mongodb_bson-record-codec-5.1.4.jar to /tmp/spark-3e78c5e8-1194-423b-b40b-f786eb8400a2/userFiles-9517a259-5446-46ba-a8ac-372b7e7f1b2c/org.mongodb_bson-record-codec-5.1.4.jar
+[2025-12-22T06:17:58.150+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-12-22T06:17:58.501+0000] {subprocess.py:93} INFO - 25/12/22 06:17:58 WARN StandaloneAppClient$ClientEndpoint: Failed to connect to master spark-master:7077
+[2025-12-22T06:17:58.501+0000] {subprocess.py:93} INFO - org.apache.spark.SparkException: Exception thrown in awaitResult:
+[2025-12-22T06:17:58.501+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+[2025-12-22T06:17:58.501+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+[2025-12-22T06:17:58.502+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+[2025-12-22T06:17:58.502+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:102)
+[2025-12-22T06:17:58.502+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.RpcEnv.setupEndpointRef(RpcEnv.scala:110)
+[2025-12-22T06:17:58.502+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.client.StandaloneAppClient$ClientEndpoint$$anon$1.run(StandaloneAppClient.scala:108)
+[2025-12-22T06:17:58.502+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[2025-12-22T06:17:58.502+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[2025-12-22T06:17:58.502+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2025-12-22T06:17:58.502+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2025-12-22T06:17:58.503+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-22T06:17:58.503+0000] {subprocess.py:93} INFO - Caused by: java.io.IOException: Failed to connect to spark-master/<unresolved>:7077
+[2025-12-22T06:17:58.503+0000] {subprocess.py:93} INFO - 	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:294)
+[2025-12-22T06:17:58.503+0000] {subprocess.py:93} INFO - 	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:214)
+[2025-12-22T06:17:58.503+0000] {subprocess.py:93} INFO - 	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:226)
+[2025-12-22T06:17:58.503+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:204)
+[2025-12-22T06:17:58.503+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:202)
+[2025-12-22T06:17:58.503+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:198)
+[2025-12-22T06:17:58.504+0000] {subprocess.py:93} INFO - 	... 4 more
+[2025-12-22T06:17:58.504+0000] {subprocess.py:93} INFO - Caused by: java.net.UnknownHostException: spark-master
+[2025-12-22T06:17:58.504+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+[2025-12-22T06:17:58.504+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+[2025-12-22T06:17:58.504+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+[2025-12-22T06:17:58.504+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+[2025-12-22T06:17:58.504+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+[2025-12-22T06:17:58.504+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+[2025-12-22T06:17:58.504+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+[2025-12-22T06:17:58.505+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:46)
+[2025-12-22T06:17:58.506+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+[2025-12-22T06:17:58.506+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+[2025-12-22T06:17:58.506+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
+[2025-12-22T06:17:58.506+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:557)
+[2025-12-22T06:17:58.506+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
+[2025-12-22T06:17:58.506+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+[2025-12-22T06:17:58.506+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
+[2025-12-22T06:17:58.506+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:105)
+[2025-12-22T06:17:58.506+0000] {subprocess.py:93} INFO - 	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:990)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:516)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:429)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:486)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+[2025-12-22T06:17:58.507+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2025-12-22T06:17:58.508+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2025-12-22T06:17:58.508+0000] {subprocess.py:93} INFO - 	... 1 more
+[2025-12-22T06:18:18.154+0000] {subprocess.py:93} INFO - 25/12/22 06:18:18 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-12-22T06:18:18.186+0000] {subprocess.py:93} INFO - 25/12/22 06:18:18 WARN StandaloneAppClient$ClientEndpoint: Failed to connect to master spark-master:7077
+[2025-12-22T06:18:18.187+0000] {subprocess.py:93} INFO - org.apache.spark.SparkException: Exception thrown in awaitResult:
+[2025-12-22T06:18:18.188+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+[2025-12-22T06:18:18.189+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+[2025-12-22T06:18:18.189+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+[2025-12-22T06:18:18.190+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:102)
+[2025-12-22T06:18:18.190+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.RpcEnv.setupEndpointRef(RpcEnv.scala:110)
+[2025-12-22T06:18:18.191+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.client.StandaloneAppClient$ClientEndpoint$$anon$1.run(StandaloneAppClient.scala:108)
+[2025-12-22T06:18:18.191+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[2025-12-22T06:18:18.192+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[2025-12-22T06:18:18.192+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2025-12-22T06:18:18.193+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2025-12-22T06:18:18.193+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-22T06:18:18.194+0000] {subprocess.py:93} INFO - Caused by: java.io.IOException: Failed to connect to spark-master/<unresolved>:7077
+[2025-12-22T06:18:18.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:294)
+[2025-12-22T06:18:18.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:214)
+[2025-12-22T06:18:18.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:226)
+[2025-12-22T06:18:18.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:204)
+[2025-12-22T06:18:18.196+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:202)
+[2025-12-22T06:18:18.196+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:198)
+[2025-12-22T06:18:18.197+0000] {subprocess.py:93} INFO - 	... 4 more
+[2025-12-22T06:18:18.197+0000] {subprocess.py:93} INFO - Caused by: java.net.UnknownHostException: spark-master
+[2025-12-22T06:18:18.197+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+[2025-12-22T06:18:18.198+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+[2025-12-22T06:18:18.198+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+[2025-12-22T06:18:18.199+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+[2025-12-22T06:18:18.199+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+[2025-12-22T06:18:18.199+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+[2025-12-22T06:18:18.200+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+[2025-12-22T06:18:18.200+0000] {subprocess.py:93} INFO - 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+[2025-12-22T06:18:18.201+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+[2025-12-22T06:18:18.201+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+[2025-12-22T06:18:18.202+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+[2025-12-22T06:18:18.202+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+[2025-12-22T06:18:18.202+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+[2025-12-22T06:18:18.203+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+[2025-12-22T06:18:18.203+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+[2025-12-22T06:18:18.203+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+[2025-12-22T06:18:18.204+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:46)
+[2025-12-22T06:18:18.204+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+[2025-12-22T06:18:18.205+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+[2025-12-22T06:18:18.205+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
+[2025-12-22T06:18:18.205+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:557)
+[2025-12-22T06:18:18.206+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
+[2025-12-22T06:18:18.206+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+[2025-12-22T06:18:18.207+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
+[2025-12-22T06:18:18.207+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:105)
+[2025-12-22T06:18:18.208+0000] {subprocess.py:93} INFO - 	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+[2025-12-22T06:18:18.208+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:990)
+[2025-12-22T06:18:18.208+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:516)
+[2025-12-22T06:18:18.209+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:429)
+[2025-12-22T06:18:18.209+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:486)
+[2025-12-22T06:18:18.209+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+[2025-12-22T06:18:18.210+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+[2025-12-22T06:18:18.210+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+[2025-12-22T06:18:18.211+0000] {subprocess.py:93} INFO - 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+[2025-12-22T06:18:18.211+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+[2025-12-22T06:18:18.211+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2025-12-22T06:18:18.212+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2025-12-22T06:18:18.212+0000] {subprocess.py:93} INFO - 	... 1 more
+[2025-12-22T06:18:38.153+0000] {subprocess.py:93} INFO - 25/12/22 06:18:38 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-12-22T06:18:38.189+0000] {subprocess.py:93} INFO - 25/12/22 06:18:38 WARN StandaloneAppClient$ClientEndpoint: Failed to connect to master spark-master:7077
+[2025-12-22T06:18:38.190+0000] {subprocess.py:93} INFO - org.apache.spark.SparkException: Exception thrown in awaitResult:
+[2025-12-22T06:18:38.191+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+[2025-12-22T06:18:38.191+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+[2025-12-22T06:18:38.192+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+[2025-12-22T06:18:38.192+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:102)
+[2025-12-22T06:18:38.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.RpcEnv.setupEndpointRef(RpcEnv.scala:110)
+[2025-12-22T06:18:38.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.client.StandaloneAppClient$ClientEndpoint$$anon$1.run(StandaloneAppClient.scala:108)
+[2025-12-22T06:18:38.194+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[2025-12-22T06:18:38.194+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[2025-12-22T06:18:38.195+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2025-12-22T06:18:38.195+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2025-12-22T06:18:38.196+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-22T06:18:38.196+0000] {subprocess.py:93} INFO - Caused by: java.io.IOException: Failed to connect to spark-master/<unresolved>:7077
+[2025-12-22T06:18:38.197+0000] {subprocess.py:93} INFO - 	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:294)
+[2025-12-22T06:18:38.197+0000] {subprocess.py:93} INFO - 	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:214)
+[2025-12-22T06:18:38.198+0000] {subprocess.py:93} INFO - 	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:226)
+[2025-12-22T06:18:38.198+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:204)
+[2025-12-22T06:18:38.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:202)
+[2025-12-22T06:18:38.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:198)
+[2025-12-22T06:18:38.199+0000] {subprocess.py:93} INFO - 	... 4 more
+[2025-12-22T06:18:38.200+0000] {subprocess.py:93} INFO - Caused by: java.net.UnknownHostException: spark-master
+[2025-12-22T06:18:38.200+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+[2025-12-22T06:18:38.201+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+[2025-12-22T06:18:38.201+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
+[2025-12-22T06:18:38.201+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+[2025-12-22T06:18:38.202+0000] {subprocess.py:93} INFO - 	at java.base/java.net.InetAddress.getByName(InetAddress.java:1256)
+[2025-12-22T06:18:38.202+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+[2025-12-22T06:18:38.203+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+[2025-12-22T06:18:38.203+0000] {subprocess.py:93} INFO - 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+[2025-12-22T06:18:38.203+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+[2025-12-22T06:18:38.204+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+[2025-12-22T06:18:38.204+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+[2025-12-22T06:18:38.204+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+[2025-12-22T06:18:38.205+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+[2025-12-22T06:18:38.205+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+[2025-12-22T06:18:38.206+0000] {subprocess.py:93} INFO - 	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+[2025-12-22T06:18:38.206+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+[2025-12-22T06:18:38.206+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:46)
+[2025-12-22T06:18:38.207+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:189)
+[2025-12-22T06:18:38.207+0000] {subprocess.py:93} INFO - 	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:175)
+[2025-12-22T06:18:38.208+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
+[2025-12-22T06:18:38.208+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:557)
+[2025-12-22T06:18:38.209+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
+[2025-12-22T06:18:38.209+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+[2025-12-22T06:18:38.209+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
+[2025-12-22T06:18:38.210+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:105)
+[2025-12-22T06:18:38.210+0000] {subprocess.py:93} INFO - 	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+[2025-12-22T06:18:38.210+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:990)
+[2025-12-22T06:18:38.211+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:516)
+[2025-12-22T06:18:38.211+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:429)
+[2025-12-22T06:18:38.212+0000] {subprocess.py:93} INFO - 	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:486)
+[2025-12-22T06:18:38.212+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+[2025-12-22T06:18:38.212+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+[2025-12-22T06:18:38.213+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+[2025-12-22T06:18:38.213+0000] {subprocess.py:93} INFO - 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+[2025-12-22T06:18:38.214+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+[2025-12-22T06:18:38.214+0000] {subprocess.py:93} INFO - 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2025-12-22T06:18:38.214+0000] {subprocess.py:93} INFO - 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2025-12-22T06:18:38.215+0000] {subprocess.py:93} INFO - 	... 1 more
+[2025-12-22T06:18:58.155+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 ERROR StandaloneSchedulerBackend: Application has been killed. Reason: All masters are unresponsive! Giving up.
+[2025-12-22T06:18:58.156+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 WARN StandaloneSchedulerBackend: Application ID is not initialized yet.
+[2025-12-22T06:18:58.177+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38691.
+[2025-12-22T06:18:58.181+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO NettyBlockTransferService: Server created on 8280e970b9f5:38691
+[2025-12-22T06:18:58.183+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-12-22T06:18:58.202+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 8280e970b9f5, 38691, None)
+[2025-12-22T06:18:58.210+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO BlockManagerMasterEndpoint: Registering block manager 8280e970b9f5:38691 with 434.4 MiB RAM, BlockManagerId(driver, 8280e970b9f5, 38691, None)
+[2025-12-22T06:18:58.216+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 8280e970b9f5, 38691, None)
+[2025-12-22T06:18:58.219+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 8280e970b9f5, 38691, None)
+[2025-12-22T06:18:58.687+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-12-22T06:18:58.868+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-12-22T06:18:58.868+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO SharedState: Warehouse path is 'file:/tmp/***tmppummn1_2/spark-warehouse'.
+[2025-12-22T06:18:58.924+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-12-22T06:18:58.942+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO SparkUI: Stopped Spark web UI at http://8280e970b9f5:4040
+[2025-12-22T06:18:58.948+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-12-22T06:18:58.952+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-12-22T06:18:58.957+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 WARN StandaloneAppClient$ClientEndpoint: Drop UnregisterApplication(null) because has not yet connected to master
+[2025-12-22T06:18:58.967+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-12-22T06:18:58.982+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO MemoryStore: MemoryStore cleared
+[2025-12-22T06:18:58.983+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO BlockManager: BlockManager stopped
+[2025-12-22T06:18:58.990+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-12-22T06:18:58.992+0000] {subprocess.py:93} INFO - 25/12/22 06:18:58 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-12-22T06:18:59.000+0000] {subprocess.py:93} INFO - 25/12/22 06:18:59 INFO SparkContext: Successfully stopped SparkContext
+[2025-12-22T06:18:59.944+0000] {subprocess.py:93} INFO - 25/12/22 06:18:59 INFO client: MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|mongo-spark-connector|source", "version": "5.1.4|10.5.0"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "6.8.0-90-generic"}, "platform": "Java/Debian/17.0.17+10-Debian-1deb12u1|Scala/2.12.18/Spark/3.5.1", "env": {"container": {"runtime": "docker"}}} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='admin', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@1ac05f1f, com.mongodb.Jep395RecordCodecProvider@40f6d38a, com.mongodb.KotlinCodecProvider@ee1b055]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[mongodb:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+[2025-12-22T06:18:59.963+0000] {subprocess.py:93} INFO - 25/12/22 06:18:59 INFO cluster: Monitor thread successfully connected to server with description ServerDescription{address=mongodb:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=20186586}
+[2025-12-22T06:19:00.209+0000] {subprocess.py:93} INFO - 25/12/22 06:19:00 INFO MongoTable: Creating MongoTable: mongo-spark-connector-10.5.0
+[2025-12-22T06:19:00.900+0000] {subprocess.py:93} INFO - 25/12/22 06:19:00 INFO V2ScanRelationPushDown:
+[2025-12-22T06:19:00.900+0000] {subprocess.py:93} INFO - Output:
+[2025-12-22T06:19:00.900+0000] {subprocess.py:93} INFO - 
+[2025-12-22T06:19:01.037+0000] {subprocess.py:93} INFO - 25/12/22 06:19:01 INFO Partitioner: Getting collection stats for: services_publics.demandes
+[2025-12-22T06:19:01.046+0000] {subprocess.py:93} INFO - 25/12/22 06:19:01 INFO Partitioner: Fewer documents (8829) than the calculated number of documents per partition (324873.0). Returning a single partition
+[2025-12-22T06:19:01.088+0000] {subprocess.py:93} INFO - 25/12/22 06:19:01 INFO Partitioner: Getting collection stats for: services_publics.demandes
+[2025-12-22T06:19:01.096+0000] {subprocess.py:93} INFO - 25/12/22 06:19:01 INFO Partitioner: Fewer documents (8829) than the calculated number of documents per partition (324873.0). Returning a single partition
+[2025-12-22T06:19:01.244+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-12-22T06:19:01.245+0000] {subprocess.py:93} INFO -   File "/opt/***/spark_jobs/ingestion.py", line 24, in <module>
+[2025-12-22T06:19:01.246+0000] {subprocess.py:93} INFO -     print(f"📥 Nombre de documents MongoDB : {df.count()}")
+[2025-12-22T06:19:01.247+0000] {subprocess.py:93} INFO -   File "/opt/spark/python/lib/pyspark.zip/pyspark/sql/dataframe.py", line 1238, in count
+[2025-12-22T06:19:01.248+0000] {subprocess.py:93} INFO -   File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2025-12-22T06:19:01.248+0000] {subprocess.py:93} INFO -   File "/opt/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+[2025-12-22T06:19:01.248+0000] {subprocess.py:93} INFO -   File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+[2025-12-22T06:19:01.248+0000] {subprocess.py:93} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o39.count.
+[2025-12-22T06:19:01.250+0000] {subprocess.py:93} INFO - : java.lang.IllegalStateException: Cannot call methods on a stopped SparkContext.
+[2025-12-22T06:19:01.251+0000] {subprocess.py:93} INFO - This stopped SparkContext was created at:
+[2025-12-22T06:19:01.252+0000] {subprocess.py:93} INFO - 
+[2025-12-22T06:19:01.253+0000] {subprocess.py:93} INFO - org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-12-22T06:19:01.254+0000] {subprocess.py:93} INFO - java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-12-22T06:19:01.255+0000] {subprocess.py:93} INFO - java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-12-22T06:19:01.256+0000] {subprocess.py:93} INFO - java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-12-22T06:19:01.257+0000] {subprocess.py:93} INFO - java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-12-22T06:19:01.258+0000] {subprocess.py:93} INFO - java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-12-22T06:19:01.259+0000] {subprocess.py:93} INFO - py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-12-22T06:19:01.259+0000] {subprocess.py:93} INFO - py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-12-22T06:19:01.259+0000] {subprocess.py:93} INFO - py4j.Gateway.invoke(Gateway.java:238)
+[2025-12-22T06:19:01.260+0000] {subprocess.py:93} INFO - py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-12-22T06:19:01.260+0000] {subprocess.py:93} INFO - py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-12-22T06:19:01.260+0000] {subprocess.py:93} INFO - py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-12-22T06:19:01.260+0000] {subprocess.py:93} INFO - py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-12-22T06:19:01.261+0000] {subprocess.py:93} INFO - java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-22T06:19:01.261+0000] {subprocess.py:93} INFO - 
+[2025-12-22T06:19:01.261+0000] {subprocess.py:93} INFO - The currently active SparkContext was created at:
+[2025-12-22T06:19:01.261+0000] {subprocess.py:93} INFO - 
+[2025-12-22T06:19:01.262+0000] {subprocess.py:93} INFO - (No active SparkContext.)
+[2025-12-22T06:19:01.262+0000] {subprocess.py:93} INFO - 
+[2025-12-22T06:19:01.262+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.assertNotStopped(SparkContext.scala:122)
+[2025-12-22T06:19:01.262+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.defaultParallelism(SparkContext.scala:2707)
+[2025-12-22T06:19:01.263+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.CoalesceShufflePartitions.$anonfun$apply$1(CoalesceShufflePartitions.scala:61)
+[2025-12-22T06:19:01.263+0000] {subprocess.py:93} INFO - 	at scala.runtime.java8.JFunction0$mcI$sp.apply(JFunction0$mcI$sp.java:23)
+[2025-12-22T06:19:01.263+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2025-12-22T06:19:01.263+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.CoalesceShufflePartitions.apply(CoalesceShufflePartitions.scala:58)
+[2025-12-22T06:19:01.264+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.CoalesceShufflePartitions.apply(CoalesceShufflePartitions.scala:34)
+[2025-12-22T06:19:01.264+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.$anonfun$optimizeQueryStage$2(AdaptiveSparkPlanExec.scala:169)
+[2025-12-22T06:19:01.264+0000] {subprocess.py:93} INFO - 	at scala.collection.LinearSeqOptimized.foldLeft(LinearSeqOptimized.scala:126)
+[2025-12-22T06:19:01.265+0000] {subprocess.py:93} INFO - 	at scala.collection.LinearSeqOptimized.foldLeft$(LinearSeqOptimized.scala:122)
+[2025-12-22T06:19:01.265+0000] {subprocess.py:93} INFO - 	at scala.collection.immutable.List.foldLeft(List.scala:91)
+[2025-12-22T06:19:01.265+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.optimizeQueryStage(AdaptiveSparkPlanExec.scala:168)
+[2025-12-22T06:19:01.265+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.newQueryStage(AdaptiveSparkPlanExec.scala:588)
+[2025-12-22T06:19:01.266+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.createQueryStages(AdaptiveSparkPlanExec.scala:538)
+[2025-12-22T06:19:01.266+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.$anonfun$createQueryStages$2(AdaptiveSparkPlanExec.scala:577)
+[2025-12-22T06:19:01.266+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:286)
+[2025-12-22T06:19:01.267+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2025-12-22T06:19:01.267+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2025-12-22T06:19:01.267+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+[2025-12-22T06:19:01.267+0000] {subprocess.py:93} INFO - 	at scala.collection.IterableLike.foreach(IterableLike.scala:74)
+[2025-12-22T06:19:01.268+0000] {subprocess.py:93} INFO - 	at scala.collection.IterableLike.foreach$(IterableLike.scala:73)
+[2025-12-22T06:19:01.268+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterable.foreach(Iterable.scala:56)
+[2025-12-22T06:19:01.268+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableLike.map(TraversableLike.scala:286)
+[2025-12-22T06:19:01.268+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableLike.map$(TraversableLike.scala:279)
+[2025-12-22T06:19:01.269+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractTraversable.map(Traversable.scala:108)
+[2025-12-22T06:19:01.269+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.createQueryStages(AdaptiveSparkPlanExec.scala:577)
+[2025-12-22T06:19:01.269+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.$anonfun$getFinalPhysicalPlan$1(AdaptiveSparkPlanExec.scala:277)
+[2025-12-22T06:19:01.269+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-12-22T06:19:01.270+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.getFinalPhysicalPlan(AdaptiveSparkPlanExec.scala:272)
+[2025-12-22T06:19:01.270+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.withFinalPlanUpdate(AdaptiveSparkPlanExec.scala:417)
+[2025-12-22T06:19:01.270+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.executeCollect(AdaptiveSparkPlanExec.scala:390)
+[2025-12-22T06:19:01.270+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.Dataset.$anonfun$count$1(Dataset.scala:3614)
+[2025-12-22T06:19:01.271+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.Dataset.$anonfun$count$1$adapted(Dataset.scala:3613)
+[2025-12-22T06:19:01.271+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.Dataset.$anonfun$withAction$2(Dataset.scala:4322)
+[2025-12-22T06:19:01.271+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+[2025-12-22T06:19:01.271+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.Dataset.$anonfun$withAction$1(Dataset.scala:4320)
+[2025-12-22T06:19:01.272+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+[2025-12-22T06:19:01.272+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+[2025-12-22T06:19:01.272+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+[2025-12-22T06:19:01.272+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-12-22T06:19:01.273+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+[2025-12-22T06:19:01.273+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:4320)
+[2025-12-22T06:19:01.273+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.Dataset.count(Dataset.scala:3613)
+[2025-12-22T06:19:01.273+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-12-22T06:19:01.273+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2025-12-22T06:19:01.274+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-12-22T06:19:01.274+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2025-12-22T06:19:01.274+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-12-22T06:19:01.274+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-12-22T06:19:01.275+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-12-22T06:19:01.275+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-12-22T06:19:01.275+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-12-22T06:19:01.275+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-12-22T06:19:01.276+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-12-22T06:19:01.276+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-22T06:19:01.276+0000] {subprocess.py:93} INFO - 
+[2025-12-22T06:19:01.329+0000] {subprocess.py:93} INFO - 25/12/22 06:19:01 INFO ShutdownHookManager: Shutdown hook called
+[2025-12-22T06:19:01.330+0000] {subprocess.py:93} INFO - 25/12/22 06:19:01 INFO ShutdownHookManager: Deleting directory /tmp/spark-2abe2b08-519d-4789-8978-1bc4375b599e
+[2025-12-22T06:19:01.340+0000] {subprocess.py:93} INFO - 25/12/22 06:19:01 INFO ShutdownHookManager: Deleting directory /tmp/spark-3e78c5e8-1194-423b-b40b-f786eb8400a2/pyspark-c53fa986-fe81-4af5-9f57-f01c3b9d940f
+[2025-12-22T06:19:01.352+0000] {subprocess.py:93} INFO - 25/12/22 06:19:01 INFO ShutdownHookManager: Deleting directory /tmp/spark-3e78c5e8-1194-423b-b40b-f786eb8400a2
+[2025-12-22T06:19:01.784+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-22T06:19:01.831+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-22T06:19:01.842+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_services_publics_togo, task_id=ingestion_mongodb, execution_date=20251222T061122, start_date=20251222T061750, end_date=20251222T061901
+[2025-12-22T06:19:01.887+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 11 for task ingestion_mongodb (Bash command failed. The command returned a non-zero exit code 1.; 665)
+[2025-12-22T06:19:01.908+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-22T06:19:01.982+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

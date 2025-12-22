@@ -1,0 +1,111 @@
+[2025-12-22T04:26:40.527+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-22T04:26:32.678078+00:00 [queued]>
+[2025-12-22T04:26:40.539+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-22T04:26:32.678078+00:00 [queued]>
+[2025-12-22T04:26:40.540+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-22T04:26:40.554+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): ingestion_mongodb> on 2025-12-22 04:26:32.678078+00:00
+[2025-12-22T04:26:40.559+0000] {standard_task_runner.py:60} INFO - Started process 209 to run task
+[2025-12-22T04:26:40.564+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'ingestion_mongodb', 'manual__2025-12-22T04:26:32.678078+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpoq4y2ghz']
+[2025-12-22T04:26:40.567+0000] {standard_task_runner.py:88} INFO - Job 9: Subtask ingestion_mongodb
+[2025-12-22T04:26:40.635+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-22T04:26:32.678078+00:00 [running]> on host a8d3d1908909
+[2025-12-22T04:26:40.729+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='ingestion_mongodb' AIRFLOW_CTX_EXECUTION_DATE='2025-12-22T04:26:32.678078+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-22T04:26:32.678078+00:00'
+[2025-12-22T04:26:40.730+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-22T04:26:40.731+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    /opt/spark/bin/spark-submit       --master spark://spark-master:7077       --packages org.mongodb.spark:mongo-spark-connector_2.12:10.5.0       --executor-memory 2G       --driver-memory 1G       /opt/***/spark_jobs/ingestion.py\n    ']
+[2025-12-22T04:26:40.741+0000] {subprocess.py:86} INFO - Output:
+[2025-12-22T04:26:44.153+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-12-22T04:26:44.328+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2025-12-22T04:26:44.328+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2025-12-22T04:26:44.333+0000] {subprocess.py:93} INFO - org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+[2025-12-22T04:26:44.335+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-5f49b759-1795-4a98-ae51-592d3b2111e9;1.0
+[2025-12-22T04:26:44.336+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-12-22T04:26:44.647+0000] {subprocess.py:93} INFO - You probably access the destination server through a proxy server that is not well configured.
+[2025-12-22T04:26:44.648+0000] {subprocess.py:93} INFO - You probably access the destination server through a proxy server that is not well configured.
+[2025-12-22T04:26:44.651+0000] {subprocess.py:93} INFO - You probably access the destination server through a proxy server that is not well configured.
+[2025-12-22T04:26:44.653+0000] {subprocess.py:93} INFO - You probably access the destination server through a proxy server that is not well configured.
+[2025-12-22T04:26:44.673+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 338ms :: artifacts dl 0ms
+[2025-12-22T04:26:44.674+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2025-12-22T04:26:44.674+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-22T04:26:44.674+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-12-22T04:26:44.674+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-12-22T04:26:44.675+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-22T04:26:44.676+0000] {subprocess.py:93} INFO - 	|      default     |   1   |   0   |   0   |   0   ||   0   |   0   |
+[2025-12-22T04:26:44.676+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-22T04:26:44.679+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.680+0000] {subprocess.py:93} INFO - :: problems summary ::
+[2025-12-22T04:26:44.680+0000] {subprocess.py:93} INFO - :::: WARNINGS
+[2025-12-22T04:26:44.680+0000] {subprocess.py:93} INFO - 	Host repo1.maven.org not found. url=https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.pom
+[2025-12-22T04:26:44.680+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.680+0000] {subprocess.py:93} INFO - 	Host repo1.maven.org not found. url=https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.jar
+[2025-12-22T04:26:44.680+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.680+0000] {subprocess.py:93} INFO - 	Host repos.spark-packages.org not found. url=https://repos.spark-packages.org/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.pom
+[2025-12-22T04:26:44.680+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.680+0000] {subprocess.py:93} INFO - 	Host repos.spark-packages.org not found. url=https://repos.spark-packages.org/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.jar
+[2025-12-22T04:26:44.684+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.684+0000] {subprocess.py:93} INFO - 		module not found: org.mongodb.spark#mongo-spark-connector_2.12;10.5.0
+[2025-12-22T04:26:44.684+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.684+0000] {subprocess.py:93} INFO - 	==== local-m2-cache: tried
+[2025-12-22T04:26:44.684+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.684+0000] {subprocess.py:93} INFO - 	  file:/home/***/.m2/repository/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.pom
+[2025-12-22T04:26:44.684+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.685+0000] {subprocess.py:93} INFO - 	  -- artifact org.mongodb.spark#mongo-spark-connector_2.12;10.5.0!mongo-spark-connector_2.12.jar:
+[2025-12-22T04:26:44.685+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.685+0000] {subprocess.py:93} INFO - 	  file:/home/***/.m2/repository/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.jar
+[2025-12-22T04:26:44.685+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.685+0000] {subprocess.py:93} INFO - 	==== local-ivy-cache: tried
+[2025-12-22T04:26:44.685+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.685+0000] {subprocess.py:93} INFO - 	  /home/***/.ivy2/local/org.mongodb.spark/mongo-spark-connector_2.12/10.5.0/ivys/ivy.xml
+[2025-12-22T04:26:44.685+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.685+0000] {subprocess.py:93} INFO - 	  -- artifact org.mongodb.spark#mongo-spark-connector_2.12;10.5.0!mongo-spark-connector_2.12.jar:
+[2025-12-22T04:26:44.686+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.686+0000] {subprocess.py:93} INFO - 	  /home/***/.ivy2/local/org.mongodb.spark/mongo-spark-connector_2.12/10.5.0/jars/mongo-spark-connector_2.12.jar
+[2025-12-22T04:26:44.686+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.686+0000] {subprocess.py:93} INFO - 	==== central: tried
+[2025-12-22T04:26:44.686+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.686+0000] {subprocess.py:93} INFO - 	  https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.pom
+[2025-12-22T04:26:44.687+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.687+0000] {subprocess.py:93} INFO - 	  -- artifact org.mongodb.spark#mongo-spark-connector_2.12;10.5.0!mongo-spark-connector_2.12.jar:
+[2025-12-22T04:26:44.687+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.687+0000] {subprocess.py:93} INFO - 	  https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.jar
+[2025-12-22T04:26:44.687+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.687+0000] {subprocess.py:93} INFO - 	==== spark-packages: tried
+[2025-12-22T04:26:44.688+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.688+0000] {subprocess.py:93} INFO - 	  https://repos.spark-packages.org/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.pom
+[2025-12-22T04:26:44.688+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.688+0000] {subprocess.py:93} INFO - 	  -- artifact org.mongodb.spark#mongo-spark-connector_2.12;10.5.0!mongo-spark-connector_2.12.jar:
+[2025-12-22T04:26:44.688+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.688+0000] {subprocess.py:93} INFO - 	  https://repos.spark-packages.org/org/mongodb/spark/mongo-spark-connector_2.12/10.5.0/mongo-spark-connector_2.12-10.5.0.jar
+[2025-12-22T04:26:44.688+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.688+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-12-22T04:26:44.688+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 		::          UNRESOLVED DEPENDENCIES         ::
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 		:: org.mongodb.spark#mongo-spark-connector_2.12;10.5.0: not found
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.689+0000] {subprocess.py:93} INFO - 
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - :: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - Exception in thread "main" java.lang.RuntimeException: [unresolved dependency: org.mongodb.spark#mongo-spark-connector_2.12;10.5.0: not found]
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmitUtils$.resolveMavenCoordinates(SparkSubmit.scala:1608)
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:185)
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:334)
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:964)
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:194)
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:217)
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:91)
+[2025-12-22T04:26:44.690+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1120)
+[2025-12-22T04:26:44.691+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1129)
+[2025-12-22T04:26:44.691+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2025-12-22T04:26:44.709+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-22T04:26:44.725+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-22T04:26:44.729+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_services_publics_togo, task_id=ingestion_mongodb, execution_date=20251222T042632, start_date=20251222T042640, end_date=20251222T042644
+[2025-12-22T04:26:44.742+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 9 for task ingestion_mongodb (Bash command failed. The command returned a non-zero exit code 1.; 209)
+[2025-12-22T04:26:44.773+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-22T04:26:44.821+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

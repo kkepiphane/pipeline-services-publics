@@ -1,0 +1,53 @@
+[2025-12-22T00:29:46.411+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo manual__2025-12-22T00:24:36.780119+00:00 [queued]>
+[2025-12-22T00:29:46.421+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.load_data_to_mongo manual__2025-12-22T00:24:36.780119+00:00 [queued]>
+[2025-12-22T00:29:46.421+0000] {taskinstance.py:2171} INFO - Starting attempt 2 of 3
+[2025-12-22T00:29:46.438+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): load_data_to_mongo> on 2025-12-22 00:24:36.780119+00:00
+[2025-12-22T00:29:46.444+0000] {standard_task_runner.py:60} INFO - Started process 246 to run task
+[2025-12-22T00:29:46.447+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'load_data_to_mongo', 'manual__2025-12-22T00:24:36.780119+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpsfzco68r']
+[2025-12-22T00:29:46.450+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask load_data_to_mongo
+[2025-12-22T00:29:46.517+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.load_data_to_mongo manual__2025-12-22T00:24:36.780119+00:00 [running]> on host 6d720e9cb0a5
+[2025-12-22T00:29:46.618+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='load_data_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-22T00:24:36.780119+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-22T00:24:36.780119+00:00'
+[2025-12-22T00:29:46.620+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-22T00:29:46.620+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    python /opt/***/scripts/load_data_to_mongo.py     /opt/***/data/demandes_services_publics_togo.json\n    ']
+[2025-12-22T00:29:46.642+0000] {subprocess.py:86} INFO - Output:
+[2025-12-22T00:29:52.444+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-12-22T00:29:52.445+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/load_data_to_mongo.py", line 38, in load_data_to_mongodb
+[2025-12-22T00:29:52.447+0000] {subprocess.py:93} INFO -     client.admin.command("ping")
+[2025-12-22T00:29:52.448+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/_csot.py", line 107, in csot_wrapper
+[2025-12-22T00:29:52.448+0000] {subprocess.py:93} INFO -     return func(self, *args, **kwargs)
+[2025-12-22T00:29:52.449+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/database.py", line 890, in command
+[2025-12-22T00:29:52.449+0000] {subprocess.py:93} INFO -     with self.__client._conn_for_reads(read_preference, session) as (
+[2025-12-22T00:29:52.450+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1346, in _conn_for_reads
+[2025-12-22T00:29:52.450+0000] {subprocess.py:93} INFO -     server = self._select_server(read_preference, session)
+[2025-12-22T00:29:52.450+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1303, in _select_server
+[2025-12-22T00:29:52.451+0000] {subprocess.py:93} INFO -     server = topology.select_server(server_selector)
+[2025-12-22T00:29:52.451+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/topology.py", line 302, in select_server
+[2025-12-22T00:29:52.452+0000] {subprocess.py:93} INFO -     server = self._select_server(selector, server_selection_timeout, address)
+[2025-12-22T00:29:52.452+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/topology.py", line 286, in _select_server
+[2025-12-22T00:29:52.453+0000] {subprocess.py:93} INFO -     servers = self.select_servers(selector, server_selection_timeout, address)
+[2025-12-22T00:29:52.454+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/topology.py", line 237, in select_servers
+[2025-12-22T00:29:52.455+0000] {subprocess.py:93} INFO -     server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+[2025-12-22T00:29:52.456+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.10/site-packages/pymongo/topology.py", line 259, in _select_servers_loop
+[2025-12-22T00:29:52.456+0000] {subprocess.py:93} INFO -     raise ServerSelectionTimeoutError(
+[2025-12-22T00:29:52.457+0000] {subprocess.py:93} INFO - pymongo.errors.ServerSelectionTimeoutError: mongodb:27017: [Errno -2] Name or service not known (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 694890fbe6705f41455f79aa, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno -2] Name or service not known (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-12-22T00:29:52.457+0000] {subprocess.py:93} INFO - 
+[2025-12-22T00:29:52.458+0000] {subprocess.py:93} INFO - Fichier source: /opt/***/data/demandes_services_publics_togo.json
+[2025-12-22T00:29:52.458+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-22T00:29:52.459+0000] {subprocess.py:93} INFO - CHARGEMENT DES DONNÉES DANS MONGODB
+[2025-12-22T00:29:52.459+0000] {subprocess.py:93} INFO - ================================================================================
+[2025-12-22T00:29:52.460+0000] {subprocess.py:93} INFO - 
+[2025-12-22T00:29:52.460+0000] {subprocess.py:93} INFO - [1/3] Connexion à MongoDB...
+[2025-12-22T00:29:52.461+0000] {subprocess.py:93} INFO - 
+[2025-12-22T00:29:52.462+0000] {subprocess.py:93} INFO - ❌ ERREUR: mongodb:27017: [Errno -2] Name or service not known (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 694890fbe6705f41455f79aa, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno -2] Name or service not known (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-12-22T00:29:52.760+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-22T00:29:52.833+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-22T00:29:52.848+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_services_publics_togo, task_id=load_data_to_mongo, execution_date=20251222T002436, start_date=20251222T002946, end_date=20251222T002952
+[2025-12-22T00:29:52.895+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 3 for task load_data_to_mongo (Bash command failed. The command returned a non-zero exit code 1.; 246)
+[2025-12-22T00:29:52.921+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-22T00:29:53.037+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

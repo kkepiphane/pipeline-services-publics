@@ -1,0 +1,36 @@
+[2025-12-21T14:58:21.651+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-21T14:58:15.146609+00:00 [queued]>
+[2025-12-21T14:58:21.664+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-21T14:58:15.146609+00:00 [queued]>
+[2025-12-21T14:58:21.664+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-21T14:58:21.681+0000] {taskinstance.py:2192} INFO - Executing <Task(SparkSubmitOperator): ingestion_mongodb> on 2025-12-21 14:58:15.146609+00:00
+[2025-12-21T14:58:21.688+0000] {standard_task_runner.py:60} INFO - Started process 203 to run task
+[2025-12-21T14:58:21.694+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'ingestion_mongodb', 'manual__2025-12-21T14:58:15.146609+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpaam6ttsx']
+[2025-12-21T14:58:21.696+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask ingestion_mongodb
+[2025-12-21T14:58:21.763+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-21T14:58:15.146609+00:00 [running]> on host 13b6637ef0d9
+[2025-12-21T14:58:21.852+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='ingestion_mongodb' AIRFLOW_CTX_EXECUTION_DATE='2025-12-21T14:58:15.146609+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-21T14:58:15.146609+00:00'
+[2025-12-21T14:58:21.865+0000] {spark_submit.py:273} INFO - Could not load connection string spark_standalone, defaulting to yarn
+[2025-12-21T14:58:21.867+0000] {spark_submit.py:403} INFO - Spark-Submit cmd: spark-submit --master yarn --packages org.mongodb.spark:mongo-spark-connector_2.12:10.2.0 --executor-memory 2G --driver-memory 1G --name arrow-spark /opt/***/spark_jobs/ingestion.py
+[2025-12-21T14:58:22.404+0000] {spark_submit.py:579} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-12-21T14:58:24.640+0000] {spark_submit.py:579} INFO - Exception in thread "main" org.apache.spark.SparkException: When running with master 'yarn' either HADOOP_CONF_DIR or YARN_CONF_DIR must be set in the environment.
+[2025-12-21T14:58:24.640+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmitArguments.error(SparkSubmitArguments.scala:640)
+[2025-12-21T14:58:24.641+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateSubmitArguments(SparkSubmitArguments.scala:287)
+[2025-12-21T14:58:24.641+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateArguments(SparkSubmitArguments.scala:245)
+[2025-12-21T14:58:24.641+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmitArguments.<init>(SparkSubmitArguments.scala:104)
+[2025-12-21T14:58:24.641+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2$$anon$3.<init>(SparkSubmit.scala:1137)
+[2025-12-21T14:58:24.641+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.parseArguments(SparkSubmit.scala:1137)
+[2025-12-21T14:58:24.641+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:71)
+[2025-12-21T14:58:24.641+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1168)
+[2025-12-21T14:58:24.641+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1177)
+[2025-12-21T14:58:24.641+0000] {spark_submit.py:579} INFO - at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2025-12-21T14:58:24.676+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 174, in execute
+    self._hook.submit(self.application)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 505, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --packages org.mongodb.spark:mongo-spark-connector_2.12:10.2.0 --executor-memory 2G --driver-memory 1G --name arrow-spark /opt/***/spark_jobs/ingestion.py. Error code is: 1.
+[2025-12-21T14:58:24.680+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_services_publics_togo, task_id=ingestion_mongodb, execution_date=20251221T145815, start_date=20251221T145821, end_date=20251221T145824
+[2025-12-21T14:58:24.691+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 8 for task ingestion_mongodb (Cannot execute: spark-submit --master yarn --packages org.mongodb.spark:mongo-spark-connector_2.12:10.2.0 --executor-memory 2G --driver-memory 1G --name arrow-spark /opt/***/spark_jobs/ingestion.py. Error code is: 1.; 203)
+[2025-12-21T14:58:24.721+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-21T14:58:24.750+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

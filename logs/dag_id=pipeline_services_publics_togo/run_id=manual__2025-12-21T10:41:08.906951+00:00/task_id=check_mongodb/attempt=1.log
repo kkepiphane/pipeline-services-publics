@@ -1,0 +1,14 @@
+[2025-12-21T10:41:12.774+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.check_mongodb manual__2025-12-21T10:41:08.906951+00:00 [queued]>
+[2025-12-21T10:41:12.798+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.check_mongodb manual__2025-12-21T10:41:08.906951+00:00 [queued]>
+[2025-12-21T10:41:12.799+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2025-12-21T10:41:12.833+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): check_mongodb> on 2025-12-21 10:41:08.906951+00:00
+[2025-12-21T10:41:12.846+0000] {standard_task_runner.py:60} INFO - Started process 181 to run task
+[2025-12-21T10:41:12.855+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'check_mongodb', 'manual__2025-12-21T10:41:08.906951+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpxehitvyv']
+[2025-12-21T10:41:12.863+0000] {standard_task_runner.py:88} INFO - Job 22: Subtask check_mongodb
+[2025-12-21T10:41:13.035+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.check_mongodb manual__2025-12-21T10:41:08.906951+00:00 [running]> on host a405a14f27e6
+[2025-12-21T10:41:13.191+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='check_mongodb' AIRFLOW_CTX_EXECUTION_DATE='2025-12-21T10:41:08.906951+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-21T10:41:08.906951+00:00'
+[2025-12-21T10:41:13.388+0000] {logging_mixin.py:188} INFO - ✓ MongoDB OK (3187 documents)
+[2025-12-21T10:41:13.390+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-12-21T10:41:13.413+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=pipeline_services_publics_togo, task_id=check_mongodb, execution_date=20251221T104108, start_date=20251221T104112, end_date=20251221T104113
+[2025-12-21T10:41:13.473+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-21T10:41:13.568+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

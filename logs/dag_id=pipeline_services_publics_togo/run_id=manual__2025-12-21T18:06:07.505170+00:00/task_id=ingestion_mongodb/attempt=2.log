@@ -1,0 +1,244 @@
+[2025-12-21T18:42:21.688+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-21T18:06:07.505170+00:00 [queued]>
+[2025-12-21T18:42:21.716+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-21T18:06:07.505170+00:00 [queued]>
+[2025-12-21T18:42:21.718+0000] {taskinstance.py:2171} INFO - Starting attempt 2 of 3
+[2025-12-21T18:42:21.746+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): ingestion_mongodb> on 2025-12-21 18:06:07.505170+00:00
+[2025-12-21T18:42:21.756+0000] {standard_task_runner.py:60} INFO - Started process 167 to run task
+[2025-12-21T18:42:21.767+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_services_publics_togo', 'ingestion_mongodb', 'manual__2025-12-21T18:06:07.505170+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_services_publics.py', '--cfg-path', '/tmp/tmpfze_sc0w']
+[2025-12-21T18:42:21.770+0000] {standard_task_runner.py:88} INFO - Job 12: Subtask ingestion_mongodb
+[2025-12-21T18:42:21.872+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_services_publics_togo.ingestion_mongodb manual__2025-12-21T18:06:07.505170+00:00 [running]> on host c322b3887458
+[2025-12-21T18:42:22.023+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineer' AIRFLOW_CTX_DAG_ID='pipeline_services_publics_togo' AIRFLOW_CTX_TASK_ID='ingestion_mongodb' AIRFLOW_CTX_EXECUTION_DATE='2025-12-21T18:06:07.505170+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-21T18:06:07.505170+00:00'
+[2025-12-21T18:42:22.026+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-21T18:42:22.027+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    /opt/spark/bin/spark-submit       --master spark://spark-master:7077       --jars /opt/spark/jars/mongodb/mongo-spark-connector_2.12-10.5.0.jar,/opt/spark/jars/mongodb/mongodb-driver-sync-5.1.4.jar,/opt/spark/jars/mongodb/bson-5.1.4.jar,/opt/spark/jars/mongodb/mongodb-driver-core-5.1.4.jar,/opt/spark/jars/mongodb/bson-record-codec-5.1.4.jar       --executor-memory 2G       --driver-memory 1G       /opt/***/spark_jobs/ingestion.py\n    ']
+[2025-12-21T18:42:22.042+0000] {subprocess.py:86} INFO - Output:
+[2025-12-21T18:42:25.193+0000] {subprocess.py:93} INFO - 25/12/21 18:42:25 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-12-21T18:42:25.449+0000] {subprocess.py:93} INFO - 25/12/21 18:42:25 WARN DependencyUtils: Local jar /opt/spark/jars/mongodb/mongo-spark-connector_2.12-10.5.0.jar does not exist, skipping.
+[2025-12-21T18:42:25.450+0000] {subprocess.py:93} INFO - 25/12/21 18:42:25 WARN DependencyUtils: Local jar /opt/spark/jars/mongodb/mongodb-driver-sync-5.1.4.jar does not exist, skipping.
+[2025-12-21T18:42:25.451+0000] {subprocess.py:93} INFO - 25/12/21 18:42:25 WARN DependencyUtils: Local jar /opt/spark/jars/mongodb/bson-5.1.4.jar does not exist, skipping.
+[2025-12-21T18:42:25.452+0000] {subprocess.py:93} INFO - 25/12/21 18:42:25 WARN DependencyUtils: Local jar /opt/spark/jars/mongodb/mongodb-driver-core-5.1.4.jar does not exist, skipping.
+[2025-12-21T18:42:25.453+0000] {subprocess.py:93} INFO - 25/12/21 18:42:25 WARN DependencyUtils: Local jar /opt/spark/jars/mongodb/bson-record-codec-5.1.4.jar does not exist, skipping.
+[2025-12-21T18:42:26.349+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SparkContext: Running Spark version 3.5.1
+[2025-12-21T18:42:26.350+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SparkContext: OS info Linux, 6.8.0-90-generic, amd64
+[2025-12-21T18:42:26.351+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SparkContext: Java version 17.0.17
+[2025-12-21T18:42:26.382+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO ResourceUtils: ==============================================================
+[2025-12-21T18:42:26.384+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-12-21T18:42:26.384+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO ResourceUtils: ==============================================================
+[2025-12-21T18:42:26.385+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SparkContext: Submitted application: Ingestion_MongoDB_Raw
+[2025-12-21T18:42:26.414+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 2048, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-12-21T18:42:26.425+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO ResourceProfile: Limiting resource is cpu
+[2025-12-21T18:42:26.429+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-12-21T18:42:26.487+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SecurityManager: Changing view acls to: ***
+[2025-12-21T18:42:26.488+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SecurityManager: Changing modify acls to: ***
+[2025-12-21T18:42:26.489+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SecurityManager: Changing view acls groups to:
+[2025-12-21T18:42:26.489+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SecurityManager: Changing modify acls groups to:
+[2025-12-21T18:42:26.489+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-12-21T18:42:26.761+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO Utils: Successfully started service 'sparkDriver' on port 43667.
+[2025-12-21T18:42:26.868+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SparkEnv: Registering MapOutputTracker
+[2025-12-21T18:42:26.933+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SparkEnv: Registering BlockManagerMaster
+[2025-12-21T18:42:26.974+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-12-21T18:42:26.974+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-12-21T18:42:26.980+0000] {subprocess.py:93} INFO - 25/12/21 18:42:26 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-12-21T18:42:27.002+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-ce137efa-3842-4752-8528-4d75408febb6
+[2025-12-21T18:42:27.021+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-12-21T18:42:27.034+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-12-21T18:42:27.192+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-12-21T18:42:27.328+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-12-21T18:42:27.406+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 ERROR SparkContext: Failed to add file:/opt/spark/jars/mongodb/mongo-spark-connector_2.12-10.5.0.jar to Spark environment
+[2025-12-21T18:42:27.406+0000] {subprocess.py:93} INFO - java.io.FileNotFoundException: Jar /opt/spark/jars/mongodb/mongo-spark-connector_2.12-10.5.0.jar not found
+[2025-12-21T18:42:27.406+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addLocalJarFile$1(SparkContext.scala:2100)
+[2025-12-21T18:42:27.406+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addJar(SparkContext.scala:2156)
+[2025-12-21T18:42:27.406+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15(SparkContext.scala:526)
+[2025-12-21T18:42:27.406+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15$adapted(SparkContext.scala:526)
+[2025-12-21T18:42:27.406+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:526)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-12-21T18:42:27.407+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-12-21T18:42:27.412+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-12-21T18:42:27.412+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2025-12-21T18:42:27.412+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-12-21T18:42:27.412+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-12-21T18:42:27.412+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-12-21T18:42:27.412+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-12-21T18:42:27.412+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-21T18:42:27.414+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 ERROR SparkContext: Failed to add file:/opt/spark/jars/mongodb/mongodb-driver-sync-5.1.4.jar to Spark environment
+[2025-12-21T18:42:27.414+0000] {subprocess.py:93} INFO - java.io.FileNotFoundException: Jar /opt/spark/jars/mongodb/mongodb-driver-sync-5.1.4.jar not found
+[2025-12-21T18:42:27.414+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addLocalJarFile$1(SparkContext.scala:2100)
+[2025-12-21T18:42:27.414+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addJar(SparkContext.scala:2156)
+[2025-12-21T18:42:27.414+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15(SparkContext.scala:526)
+[2025-12-21T18:42:27.414+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15$adapted(SparkContext.scala:526)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:526)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-12-21T18:42:27.415+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-12-21T18:42:27.420+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-12-21T18:42:27.420+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-12-21T18:42:27.420+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2025-12-21T18:42:27.420+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-12-21T18:42:27.420+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-12-21T18:42:27.420+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-12-21T18:42:27.420+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-12-21T18:42:27.420+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-21T18:42:27.429+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 ERROR SparkContext: Failed to add file:/opt/spark/jars/mongodb/bson-5.1.4.jar to Spark environment
+[2025-12-21T18:42:27.429+0000] {subprocess.py:93} INFO - java.io.FileNotFoundException: Jar /opt/spark/jars/mongodb/bson-5.1.4.jar not found
+[2025-12-21T18:42:27.429+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addLocalJarFile$1(SparkContext.scala:2100)
+[2025-12-21T18:42:27.429+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addJar(SparkContext.scala:2156)
+[2025-12-21T18:42:27.429+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15(SparkContext.scala:526)
+[2025-12-21T18:42:27.429+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15$adapted(SparkContext.scala:526)
+[2025-12-21T18:42:27.429+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:526)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-12-21T18:42:27.430+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 ERROR SparkContext: Failed to add file:/opt/spark/jars/mongodb/mongodb-driver-core-5.1.4.jar to Spark environment
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - java.io.FileNotFoundException: Jar /opt/spark/jars/mongodb/mongodb-driver-core-5.1.4.jar not found
+[2025-12-21T18:42:27.431+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addLocalJarFile$1(SparkContext.scala:2100)
+[2025-12-21T18:42:27.433+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addJar(SparkContext.scala:2156)
+[2025-12-21T18:42:27.434+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15(SparkContext.scala:526)
+[2025-12-21T18:42:27.434+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15$adapted(SparkContext.scala:526)
+[2025-12-21T18:42:27.434+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2025-12-21T18:42:27.434+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2025-12-21T18:42:27.434+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2025-12-21T18:42:27.434+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:526)
+[2025-12-21T18:42:27.434+0000] {subprocess.py:93} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-12-21T18:42:27.435+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 ERROR SparkContext: Failed to add file:/opt/spark/jars/mongodb/bson-record-codec-5.1.4.jar to Spark environment
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - java.io.FileNotFoundException: Jar /opt/spark/jars/mongodb/bson-record-codec-5.1.4.jar not found
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addLocalJarFile$1(SparkContext.scala:2100)
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.addJar(SparkContext.scala:2156)
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15(SparkContext.scala:526)
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.$anonfun$new$15$adapted(SparkContext.scala:526)
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2025-12-21T18:42:27.436+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:526)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-12-21T18:42:27.437+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-12-21T18:42:27.438+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2025-12-21T18:42:27.438+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-12-21T18:42:27.438+0000] {subprocess.py:93} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-12-21T18:42:27.438+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-12-21T18:42:27.438+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-12-21T18:42:27.438+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-21T18:42:27.575+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-12-21T18:42:27.640+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.2:7077 after 37 ms (0 ms spent in bootstraps)
+[2025-12-21T18:42:27.965+0000] {subprocess.py:93} INFO - 25/12/21 18:42:27 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20251221184227-0000
+[2025-12-21T18:42:28.009+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43179.
+[2025-12-21T18:42:28.018+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO NettyBlockTransferService: Server created on c322b3887458:43179
+[2025-12-21T18:42:28.019+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-12-21T18:42:28.023+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c322b3887458, 43179, None)
+[2025-12-21T18:42:28.035+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO BlockManagerMasterEndpoint: Registering block manager c322b3887458:43179 with 434.4 MiB RAM, BlockManagerId(driver, c322b3887458, 43179, None)
+[2025-12-21T18:42:28.047+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c322b3887458, 43179, None)
+[2025-12-21T18:42:28.051+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c322b3887458, 43179, None)
+[2025-12-21T18:42:28.062+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251221184227-0000/0 on worker-20251221184210-172.18.0.5-36313 (172.18.0.5:36313) with 2 core(s)
+[2025-12-21T18:42:28.067+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO StandaloneSchedulerBackend: Granted executor ID app-20251221184227-0000/0 on hostPort 172.18.0.5:36313 with 2 core(s), 2.0 GiB RAM
+[2025-12-21T18:42:28.420+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251221184227-0000/0 is now RUNNING
+[2025-12-21T18:42:28.833+0000] {subprocess.py:93} INFO - 25/12/21 18:42:28 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-12-21T18:42:29.226+0000] {subprocess.py:93} INFO - 25/12/21 18:42:29 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-12-21T18:42:29.236+0000] {subprocess.py:93} INFO - 25/12/21 18:42:29 INFO SharedState: Warehouse path is 'file:/tmp/***tmp44rwc1e9/spark-warehouse'.
+[2025-12-21T18:42:32.376+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-12-21T18:42:32.376+0000] {subprocess.py:93} INFO -   File "/opt/***/spark_jobs/ingestion.py", line 23, in <module>
+[2025-12-21T18:42:32.377+0000] {subprocess.py:93} INFO -     df = spark.read.format("mongodb").load()
+[2025-12-21T18:42:32.378+0000] {subprocess.py:93} INFO -   File "/opt/spark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 314, in load
+[2025-12-21T18:42:32.378+0000] {subprocess.py:93} INFO -   File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2025-12-21T18:42:32.378+0000] {subprocess.py:93} INFO -   File "/opt/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+[2025-12-21T18:42:32.378+0000] {subprocess.py:93} INFO -   File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+[2025-12-21T18:42:32.381+0000] {subprocess.py:93} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o37.load.
+[2025-12-21T18:42:32.384+0000] {subprocess.py:93} INFO - : org.apache.spark.SparkClassNotFoundException: [DATA_SOURCE_NOT_FOUND] Failed to find the data source: mongodb. Please find packages at `https://spark.apache.org/third-party-projects.html`.
+[2025-12-21T18:42:32.384+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.errors.QueryExecutionErrors$.dataSourceNotFoundError(QueryExecutionErrors.scala:724)
+[2025-12-21T18:42:32.384+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSource(DataSource.scala:647)
+[2025-12-21T18:42:32.384+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSourceV2(DataSource.scala:697)
+[2025-12-21T18:42:32.384+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:208)
+[2025-12-21T18:42:32.384+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:172)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-12-21T18:42:32.385+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-12-21T18:42:32.394+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-12-21T18:42:32.394+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-12-21T18:42:32.394+0000] {subprocess.py:93} INFO - Caused by: java.lang.ClassNotFoundException: mongodb.DefaultSource
+[2025-12-21T18:42:32.394+0000] {subprocess.py:93} INFO - 	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+[2025-12-21T18:42:32.394+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+[2025-12-21T18:42:32.394+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+[2025-12-21T18:42:32.394+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource$.$anonfun$lookupDataSource$5(DataSource.scala:633)
+[2025-12-21T18:42:32.399+0000] {subprocess.py:93} INFO - 	at scala.util.Try$.apply(Try.scala:213)
+[2025-12-21T18:42:32.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource$.$anonfun$lookupDataSource$4(DataSource.scala:633)
+[2025-12-21T18:42:32.399+0000] {subprocess.py:93} INFO - 	at scala.util.Failure.orElse(Try.scala:224)
+[2025-12-21T18:42:32.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSource(DataSource.scala:633)
+[2025-12-21T18:42:32.399+0000] {subprocess.py:93} INFO - 	... 15 more
+[2025-12-21T18:42:32.399+0000] {subprocess.py:93} INFO - 
+[2025-12-21T18:42:32.458+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-12-21T18:42:32.459+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-12-21T18:42:32.516+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO SparkUI: Stopped Spark web UI at http://c322b3887458:4040
+[2025-12-21T18:42:32.529+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-12-21T18:42:32.536+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-12-21T18:42:32.599+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-12-21T18:42:32.614+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO MemoryStore: MemoryStore cleared
+[2025-12-21T18:42:32.615+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO BlockManager: BlockManager stopped
+[2025-12-21T18:42:32.623+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-12-21T18:42:32.626+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-12-21T18:42:32.645+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO SparkContext: Successfully stopped SparkContext
+[2025-12-21T18:42:32.646+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO ShutdownHookManager: Shutdown hook called
+[2025-12-21T18:42:32.647+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO ShutdownHookManager: Deleting directory /tmp/spark-5f470347-0d6a-4d5c-b273-b3702f13ac30
+[2025-12-21T18:42:32.655+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO ShutdownHookManager: Deleting directory /tmp/spark-5f470347-0d6a-4d5c-b273-b3702f13ac30/pyspark-8804141f-abdc-407c-91c4-cb797ae1d5ea
+[2025-12-21T18:42:32.671+0000] {subprocess.py:93} INFO - 25/12/21 18:42:32 INFO ShutdownHookManager: Deleting directory /tmp/spark-bd6c9434-9ecf-4772-a3b0-c3635e577e22
+[2025-12-21T18:42:32.748+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-21T18:42:32.764+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-21T18:42:32.767+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_services_publics_togo, task_id=ingestion_mongodb, execution_date=20251221T180607, start_date=20251221T184221, end_date=20251221T184232
+[2025-12-21T18:42:32.780+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 12 for task ingestion_mongodb (Bash command failed. The command returned a non-zero exit code 1.; 167)
+[2025-12-21T18:42:32.818+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-21T18:42:32.845+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check
