@@ -166,16 +166,6 @@ cp /chemin/vers/demandes_services_publics_togo.json data/
 ls -lh data/demandes_services_publics_togo.json
 ```
 
-### Étape 3 : Lancer l'installation automatique
-
-```bash
-# Rendre le script exécutable (Linux/Mac)
-chmod +x setup.sh
-
-# Lancer l'installation
-./setup.sh
-```
-
 **⏱️ Durée : 3-5 minutes**
 
 Le script va automatiquement :
@@ -189,7 +179,7 @@ Le script va automatiquement :
 8. ✓ Démarrer Airflow (webserver + scheduler)
 9. ✓ Charger les données dans MongoDB
 
-### Étape 4 : Accéder à l'interface
+### Étape 3 : Accéder à l'interface
 
 Ouvrez votre navigateur : **http://localhost:8080**
 
@@ -239,9 +229,6 @@ pipeline-services-publics/
 ├── docker-compose.yml
 ├── Dockerfile
 ├── requirements.txt
-├── setup.sh
-├── check_status.sh
-├── Makefile
 ├── dags/
 │   └── pipeline_services_publics.py
 ├── spark_jobs/
@@ -624,23 +611,6 @@ docker stats
 
 ---
 
-## 🐛 Dépannage
-
-### Problème : Le setup échoue
-
-```bash
-# Solution 1 : Nettoyer complètement
-docker-compose down -v
-docker system prune -af
-
-# Relancer
-./setup.sh
-
-# Solution 2 : Vérifier Docker
-docker info
-docker-compose version
-```
-
 ### Problème : MongoDB vide après installation
 
 ```bash
@@ -735,13 +705,9 @@ docker exec -it $(docker ps -q -f name=airflow-scheduler) \
 pipeline-services-publics/
 │
 ├── README.md                           # Cette documentation
-├── QUICKSTART.md                       # Guide de démarrage rapide
 ├── docker-compose.yml                  # Configuration Docker Compose
 ├── Dockerfile                          # Image Airflow + Spark
 ├── requirements.txt                    # Dépendances Python
-├── setup.sh                            # Script d'installation automatique
-├── check_status.sh                     # Script de vérification
-├── Makefile                            # Commandes simplifiées
 │
 ├── dags/                               # DAGs Airflow
 │   └── pipeline_services_publics.py    # DAG principal (7 tâches)
