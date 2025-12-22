@@ -149,7 +149,7 @@ docker system info | grep "Total Memory"
 
 ```bash
 # Option A : Avec Git
-git clone <URL_DU_REPO>
+git clone https://github.com/kkepiphane/pipeline-services-publics.git
 cd pipeline-services-publics
 
 # Option B : Télécharger le ZIP
