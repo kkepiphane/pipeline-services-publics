@@ -110,3 +110,38 @@
 [2025-12-24T04:53:44.150+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:53:44.150+0000] {dag.py:3033} INFO - Sync 1 DAGs
 [2025-12-24T04:53:44.179+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:53:44.179+0000] {dag.py:3820} INFO - Setting next_dagrun for pipeline_services_publics_togo to 2025-12-24T02:00:00+00:00, run_after=2025-12-25T02:00:00+00:00
 [2025-12-24T04:53:44.204+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipeline_services_publics.py took 0.195 seconds
+[2025-12-24T04:54:14.407+0000] {processor.py:161} INFO - Started process (PID=4042) to work on /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:54:14.409+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipeline_services_publics.py for tasks to queue
+[2025-12-24T04:54:14.411+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:54:14.411+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:54:14.456+0000] {processor.py:840} INFO - DAG(s) 'pipeline_services_publics_togo' retrieved from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:54:14.550+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:54:14.550+0000] {dag.py:3033} INFO - Sync 1 DAGs
+[2025-12-24T04:54:14.593+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:54:14.592+0000] {dag.py:3820} INFO - Setting next_dagrun for pipeline_services_publics_togo to 2025-12-24T02:00:00+00:00, run_after=2025-12-25T02:00:00+00:00
+[2025-12-24T04:54:14.614+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipeline_services_publics.py took 0.218 seconds
+[2025-12-24T04:54:44.795+0000] {processor.py:161} INFO - Started process (PID=4047) to work on /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:54:44.801+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipeline_services_publics.py for tasks to queue
+[2025-12-24T04:54:44.803+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:54:44.802+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:54:44.820+0000] {processor.py:840} INFO - DAG(s) 'pipeline_services_publics_togo' retrieved from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:54:44.857+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:54:44.856+0000] {dag.py:3033} INFO - Sync 1 DAGs
+[2025-12-24T04:54:44.883+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:54:44.882+0000] {dag.py:3820} INFO - Setting next_dagrun for pipeline_services_publics_togo to 2025-12-24T02:00:00+00:00, run_after=2025-12-25T02:00:00+00:00
+[2025-12-24T04:54:44.903+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipeline_services_publics.py took 0.112 seconds
+[2025-12-24T04:55:15.007+0000] {processor.py:161} INFO - Started process (PID=4052) to work on /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:55:15.009+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipeline_services_publics.py for tasks to queue
+[2025-12-24T04:55:15.010+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:55:15.010+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:55:15.030+0000] {processor.py:840} INFO - DAG(s) 'pipeline_services_publics_togo' retrieved from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:55:15.065+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:55:15.065+0000] {dag.py:3033} INFO - Sync 1 DAGs
+[2025-12-24T04:55:15.094+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:55:15.093+0000] {dag.py:3820} INFO - Setting next_dagrun for pipeline_services_publics_togo to 2025-12-24T02:00:00+00:00, run_after=2025-12-25T02:00:00+00:00
+[2025-12-24T04:55:15.113+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipeline_services_publics.py took 0.117 seconds
+[2025-12-24T04:55:45.257+0000] {processor.py:161} INFO - Started process (PID=4057) to work on /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:55:45.259+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipeline_services_publics.py for tasks to queue
+[2025-12-24T04:55:45.260+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:55:45.260+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:55:45.280+0000] {processor.py:840} INFO - DAG(s) 'pipeline_services_publics_togo' retrieved from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:55:45.317+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:55:45.317+0000] {dag.py:3033} INFO - Sync 1 DAGs
+[2025-12-24T04:55:45.343+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:55:45.343+0000] {dag.py:3820} INFO - Setting next_dagrun for pipeline_services_publics_togo to 2025-12-24T02:00:00+00:00, run_after=2025-12-25T02:00:00+00:00
+[2025-12-24T04:55:45.362+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipeline_services_publics.py took 0.111 seconds
+[2025-12-24T04:56:15.469+0000] {processor.py:161} INFO - Started process (PID=4062) to work on /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:56:15.470+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipeline_services_publics.py for tasks to queue
+[2025-12-24T04:56:15.471+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:56:15.471+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:56:15.488+0000] {processor.py:840} INFO - DAG(s) 'pipeline_services_publics_togo' retrieved from /opt/airflow/dags/pipeline_services_publics.py
+[2025-12-24T04:56:15.526+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:56:15.526+0000] {dag.py:3033} INFO - Sync 1 DAGs
+[2025-12-24T04:56:15.557+0000] {logging_mixin.py:188} INFO - [2025-12-24T04:56:15.556+0000] {dag.py:3820} INFO - Setting next_dagrun for pipeline_services_publics_togo to 2025-12-24T02:00:00+00:00, run_after=2025-12-25T02:00:00+00:00
+[2025-12-24T04:56:15.583+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipeline_services_publics.py took 0.118 seconds
